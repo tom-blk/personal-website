@@ -1,0 +1,25 @@
+import Link from 'next/link'
+import React from 'react'
+
+const Footer = () => {
+
+  const links = [
+    {name: "Github", href: "https://github.com/tom-blk", icon:"icons/github.png"},
+    {name: "LinkedIn", href: "https://linkedin.com/in/tom-bleek-a7332b182", icon:"icons/linkedin.png"},
+  ]
+
+  return (
+    <footer className={"flex gap-4"}>
+      {
+      links.map((link, index) => (
+        <div className={`flex items-center ${link.name === "LinkedIn" ? "gap-1" : "gap-2"}`}>
+          <img className={"w-6"} src={link.icon} alt={link.name}/>
+          <Link key={index} target='_blank' href={link.href}>{link.name}</Link>
+        </div>
+      ))
+      }
+    </footer>
+  )
+}
+
+export default Footer
