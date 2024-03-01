@@ -4,5 +4,12 @@ export interface Project{
     gitHubLink: string;
     buildLink?: string;
     description: string;
+    technologies: Technology[];
     isDemo: boolean;
+}
+
+export interface Technology{
+    name: string,
+    imageUrl: string,
+    technologyUrl: string,
 }
