@@ -17,8 +17,8 @@ const TechnologiesList = () => {
       {name: "Tailwind CSS", isCompetent: true}],
     Backend: [
       {name: "Node.js", isCompetent: true},
-      {name: "Express", isCompetent: false},
-      {name: "SQL", isCompetent: false},
+      {name: "Express.js", isCompetent: false},
+      {name: "MySQL", isCompetent: false},
       {name: "REST", isCompetent: false},
       {name: "Rust", isCompetent: false}],
     Other: [
@@ -32,20 +32,20 @@ const TechnologiesList = () => {
     <div className={"grid gap-3"}>
       <h2 className={"font-bold"}>Technologies</h2>
       <div className={"text-xs"}>
-        <div className={"text-gray-700"}>&#x25C9; Still learning</div>
-        <div className={"text-indigo-300"}>&#x25C9; Still learning but I don't feel like an idiot</div>
+        <div className={"text-gray-600"}>&#x25C9; Still learning</div>
+        <div className={"text-gray-300"}>&#x25C9; Still learning but I don't feel like an idiot</div>
       </div>
       <div className={"grid grid-cols-3 gap-20"}>
       {
         Object.keys(technologies).map((key: string, index: number) => {
           return (
             <div key={index}>
-              <h3 className={"font-light text-sm"}>{key}</h3>
-              <ul className={"list-disc list-inside"}>
+              <h3 className={"mb-2 font-light w-full text-center border-b border-gray-300 text-sm"}>{key}</h3>
+              <ul className={"grid gap-1 text-center text-sm"}>
                 {
                   technologies[key as Key].map((technology: Technology, index: number) => {
                     return (
-                      <li className={`pl-4 ${technology.isCompetent ? 'text-indigo-300' : 'text-gray-700'}`} key={index}>{technology.name}</li>
+                      <li className={`bg-opacity-5 hover:bg-opacity-10 bg-gray-400 rounded-sm p-2 ${technology.isCompetent ? 'text-gray-300' : 'text-gray-600'}`} key={index}>{technology.name}</li>
                     )
                   })
                 }
