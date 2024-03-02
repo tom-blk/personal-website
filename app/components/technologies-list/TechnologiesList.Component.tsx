@@ -1,30 +1,10 @@
 import React from 'react'
-
-interface Technology{
-  name: string;
-  isCompetent: boolean;
-}
+import { technologiesList } from '@/app/data/technologies';
+import { Technology } from '@/app/types/Projects';
 
 const TechnologiesList = () => {
 
-  const technologies = {
-    Frontend: [
-      {name:"React", isCompetent: true}, 
-      {name:"Next.js", isCompetent: true}, 
-      {name:"Typescript", isCompetent: true}, 
-      {name: "HTML5", isCompetent: true},
-      {name: "CSS", isCompetent: true},
-      {name: "Tailwind CSS", isCompetent: true}],
-    Backend: [
-      {name: "Node.js", isCompetent: true},
-      {name: "Express.js", isCompetent: false},
-      {name: "MySQL", isCompetent: false},
-      {name: "REST", isCompetent: false},
-      {name: "Rust", isCompetent: false}],
-    Other: [
-      {name: "Git", isCompetent: true},
-      {name: "Linux", isCompetent: false}]
-  }
+  const technologies = technologiesList;
 
   type Key = keyof typeof technologies;
 
@@ -41,15 +21,18 @@ const TechnologiesList = () => {
           return (
             <div key={index}>
               <h3 className={"mb-2 font-light w-full text-center border-b border-gray-300 text-sm"}>{key}</h3>
-              <ul className={"grid gap-1 text-center text-sm"}>
+              <div className={"grid gap-1 text-center text-sm"}>
                 {
                   technologies[key as Key].map((technology: Technology, index: number) => {
                     return (
-                      <li className={`bg-opacity-5 hover:bg-opacity-10 bg-gray-400 rounded-sm p-2 ${technology.isCompetent ? 'text-gray-300' : 'text-gray-600'}`} key={index}>{technology.name}</li>
+                      <article className={`bg-opacity-5 flex gap-1 justify-evenly hover:bg-opacity-10 bg-gray-400 rounded-sm py-2 px-6 ${technology.isAreaOfFocus ? 'text-gray-300' : 'text-gray-600'}`} key={index}>
+                        <img src={technology.imageUrl} alt={technology.name} className={"w-6 h-6"}/>
+                        <div>{technology.name}</div>
+                      </article>
                     )
                   })
                 }
-              </ul>
+              </div>
             </div>
           )
         })

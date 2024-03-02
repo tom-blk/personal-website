@@ -12,7 +12,7 @@ const Footer = () => {
     <footer className={"flex gap-4"}>
       {
       links.map((link, index) => (
-        <div className={`flex items-center ${link.name === "LinkedIn" ? "gap-1" : "gap-2"}`}>
+        <div key={index} className={`flex items-center ${link.name === "LinkedIn" ? "gap-1" : "gap-2"}`}>
           <img className={"w-6"} src={link.icon} alt={link.name}/>
           <Link key={index} target='_blank' href={link.href}>{link.name}</Link>
         </div>
