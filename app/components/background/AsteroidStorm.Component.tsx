@@ -1,7 +1,5 @@
 import React from 'react'
 import Asteroid from './Asteroid.Component'
-import { GLTF } from 'three/examples/jsm/Addons.js'
-import { ObjectMap } from '@react-three/fiber'
 import { Group, Object3DEventMap } from 'three';
 
 interface AsteroidStormProps{

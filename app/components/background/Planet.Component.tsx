@@ -1,6 +1,5 @@
 import React, {useRef} from 'react'
-import { ObjectMap, useFrame, useLoader } from '@react-three/fiber'
-import { GLTF, GLTFLoader } from 'three/examples/jsm/Addons.js'
+import { useFrame } from '@react-three/fiber'
 import { Group, Mesh, Object3DEventMap } from 'three'
 import { RapierRigidBody, RigidBody } from '@react-three/rapier'
 

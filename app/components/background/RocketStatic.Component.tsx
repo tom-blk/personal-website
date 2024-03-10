@@ -1,13 +1,11 @@
-'use client';
 import React, {MutableRefObject, Suspense, useEffect, useRef} from 'react';
-import { Canvas, RootState, useFrame, useLoader } from '@react-three/fiber';
+import { RootState, useFrame, useLoader } from '@react-three/fiber';
 import { Mesh,  } from 'three';
 import * as THREE from 'three';
 import { Trail } from '@react-three/drei';
 import { GLTFLoader } from 'three/examples/jsm/Addons.js';
-import { OrbitControls } from '@react-three/drei';
 import { degToRad } from 'three/src/math/MathUtils.js';
-import { Physics, RapierRigidBody, RigidBody } from '@react-three/rapier';
+import { RapierRigidBody, RigidBody } from '@react-three/rapier';
 
 const MOVEMENT_SPEED = 0.1;
 
