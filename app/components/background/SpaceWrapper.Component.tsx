@@ -15,7 +15,7 @@ const SpaceWrapper = () => {
     }
 
     return (
-        <div className={"w-full h-full absolute -z-10"}>
+        <div className={"w-full h-full fixed -z-10"}>
             <button
                 onClick={handleControlChange}
                 className={"absolute top-8 right-8 border border-red-900 z-10 rounded-md p-3"}
