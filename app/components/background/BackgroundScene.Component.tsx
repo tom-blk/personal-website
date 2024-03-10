@@ -5,7 +5,7 @@ import { Canvas, useLoader } from "@react-three/fiber";
 import Space from "./Space.Component";
 import Planet from './Planet.Component';
 import { Physics } from '@react-three/rapier';
-import RocketStatic from './RocketStatic.Component';
+import Rocket from './Rocket.Component';
 import AsteroidStorm from './AsteroidStorm.Component';
 import { GLTFLoader } from 'three/examples/jsm/Addons.js';
 
@@ -27,7 +27,7 @@ const BackgroundScene = ({controls}: {controls: "autoPilot" | "mouse"}) => {
                 <Physics gravity={[0,0,0]}>
                     <AsteroidStorm model={model}/>
                     <Planet model={model}/>
-                    <RocketStatic controls={controls} />
+                    <Rocket controls={controls} />
                 </Physics>
                 </Canvas>
             </Suspense>

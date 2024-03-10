@@ -1,4 +1,4 @@
-import React, {MutableRefObject, Suspense, useEffect, useRef} from 'react';
+import React, {MutableRefObject, useEffect, useRef} from 'react';
 import { RootState, useFrame, useLoader } from '@react-three/fiber';
 import { Mesh,  } from 'three';
 import * as THREE from 'three';
@@ -9,7 +9,7 @@ import { RapierRigidBody, RigidBody } from '@react-three/rapier';
 
 const MOVEMENT_SPEED = 0.1;
 
-const Scene = ({controls}: {controls: "autoPilot" | "mouse"}) => {
+const Rocket = ({controls}: {controls: "autoPilot" | "mouse"}) => {
     //Double line breaks because the code is long and complex. 
 
     const rocketModel = useLoader(GLTFLoader, "/3d/rocket/rocket.gltf")
@@ -169,12 +169,4 @@ const Scene = ({controls}: {controls: "autoPilot" | "mouse"}) => {
     );
 }
 
-const RocketStatic = ({controls}: {controls: "autoPilot" | "mouse"}) => {
-    return (
-        <Suspense fallback={null}>
-            <Scene controls={controls}/>
-        </Suspense>
-    );
-}
-
-export default RocketStatic;
+export default Rocket;
