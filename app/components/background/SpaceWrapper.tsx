@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import BackgroundScene from './BackgroundScene.Component'
 
-const Wrapper = () => {
+const SpaceWrapper = () => {
 
     const [controls, setControls] = useState<"mouse" | "autoPilot">("autoPilot")
 
@@ -15,7 +15,7 @@ const Wrapper = () => {
     }
 
     return (
-        <div className={"w-full h-full"}>
+        <div className={"w-full h-full absolute -z-10"}>
             <button
                 onClick={handleControlChange}
                 className={"absolute top-8 right-8 border border-red-900 z-10 rounded-md p-3"}
@@ -27,4 +27,4 @@ const Wrapper = () => {
     )
 }
 
-export default Wrapper
+export default SpaceWrapper
