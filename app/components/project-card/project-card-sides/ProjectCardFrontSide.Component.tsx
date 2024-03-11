@@ -1,19 +1,19 @@
-'use client';
 import Link from 'next/link'
 import Image from 'next/image';
-import React, { useState } from 'react'
+import React from 'react'
 
-import GitHubIconLink from '../github-icon-link/GitHubIconLink.Component';
+import GitHubIconLink from '../../github-icon-link/GitHubIconLink.Component';
+import OnHoverTrigger from '../../building-blocks/on-hover-trigger/OnHoverTrigger.Component';
 
-import { Project } from '../../types/Projects';
-import OnHoverTrigger from '../building-blocks/on-hover-trigger/OnHoverTrigger.Component';
+import { Project } from '../../../types/Projects';
+
 
 interface Props {
     project: Project
     handleHover: () => void;
 }
 
-const ProjectCard = (props: Props) => {
+const ProjectCardFrontSide = (props: Props) => {
 
     const {name, image, gitHubLink, buildLink, description, isDemo} = props.project;
     const {handleHover} = props;
@@ -43,4 +43,4 @@ const ProjectCard = (props: Props) => {
     )
 }
 
-export default ProjectCard
+export default ProjectCardFrontSide
