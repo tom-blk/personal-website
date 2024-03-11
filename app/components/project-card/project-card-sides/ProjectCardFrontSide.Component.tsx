@@ -1,23 +1,32 @@
-'use client';
 import Link from 'next/link'
 import Image from 'next/image';
-import React, { useState } from 'react'
+import React from 'react'
 
-import GitHubIconLink from '../github-icon-link/GitHubIconLink.Component';
+import GitHubIconLink from '../../github-icon-link/GitHubIconLink.Component';
+import OnHoverTrigger from '../../building-blocks/on-hover-trigger/OnHoverTrigger.Component';
 
-import { Project } from '../../types/Projects';
+import { Project } from '../../../types/Projects';
 
-const ProjectCard = (project: Project) => {
 
-    const {name, image, gitHubLink, buildLink, description, isDemo} = project;
+interface Props {
+    project: Project
+    handleHover: () => void;
+}
+
+const ProjectCardFrontSide = (props: Props) => {
+
+    const {name, image, gitHubLink, buildLink, description, isDemo} = props.project;
+    const {handleHover} = props;
+
 
     return (
         <Link
-            className={"flex flex-col gap-1 text-gray-300 border border-slate-800 rounded-md p-5 w-60"}
+            className={"p-6 flex flex-col gap-1"}
             target="_blank" 
             href={buildLink ? buildLink : gitHubLink}
         >
             <h3 className={"text-sm"}>{name}</h3>
+            <OnHoverTrigger prompt='Stack' className={"text-xs absolute top-4 right-4"} onHoverFunction={handleHover}/>
             <div className={"grid grow items-center h-16 relative"}>
                 <div className={`${isDemo ? "block" : "hidden"} text-red-900 font-bold text-xs absolute right-0 top-0`}>Demo</div>
                 {
@@ -34,4 +43,4 @@ const ProjectCard = (project: Project) => {
     )
 }
 
-export default ProjectCard
+export default ProjectCardFrontSide

@@ -1,8 +1,7 @@
 import React from 'react'
-import ProjectCard from '../project-card/ProjectCard.Component'
 import { Project } from '@/app/types/Projects'
-import ProjectCardWrapper from '../project-card/project-card-wrapper/ProjectCardWrapper.Component'
 import { html, css, mysql, react, typescript, node, express, next, tailwind } from '@/app/data/technologies'
+import ProjectCardFlipper from '../project-card/project-card-flipper/ProjectCardFlipper.Component'
 
 const ProjectList= () => {
 
@@ -37,7 +36,7 @@ const ProjectList= () => {
             {
                 projects.map((project, index) => {
                     return (
-                        <ProjectCardWrapper key={index} {...project}/>
+                        <ProjectCardFlipper key={index} {...project}/>
                     )
                 })
             }

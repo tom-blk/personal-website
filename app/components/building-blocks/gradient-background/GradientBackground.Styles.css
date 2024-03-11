@@ -1,0 +1,160 @@
+:root {
+    --color-gradient-1: 210, 0, 207;
+    --color-gradient-2: 110, 175, 255;
+    --color-gradient-3: 188, 0, 147;
+    --color-gradient-4: 0, 92, 129;
+    --color-gradient-5: 233, 15, 15;
+    --controlled-color: 199, 0, 53;
+    --gradient-size: 80%;
+    --mix-blend-mode: hard-light;
+}
+
+@keyframes moveInCircle {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes moveVertical {
+    0% {
+        transform: translateY(-50%);
+    }
+    50% {
+        transform: translateY(50%);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes moveHorizontal {
+    0% {
+        transform: translateX(-50%) translateY(-10%);
+    }
+    50% {
+        transform: translateX(50%) translateY(10%);
+    }
+    100% {
+        transform: translateX(-50%) translateY(-10%);
+    }
+}
+
+
+.gradient-bg {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1;
+}
+
+svg {
+    display: none;
+}
+
+
+.gradients-container {
+    filter: url(#goo) blur(40px) ;
+    width: 100%;
+    height: 100%;
+}
+
+.gradient-1 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color-gradient-1), 0.8) 0, rgba(var(--color-gradient-1), 0) 50%) no-repeat;
+    mix-blend-mode: var(--mix-blend-mode);
+
+    width: var(--gradient-size);
+    height: var(--gradient-size);
+    top: calc(50% - var(--gradient-size) / 2);
+    left: calc(50% - var(--gradient-size) / 2);
+
+    transform-origin: center center;
+    animation: moveVertical 30s ease infinite;
+
+    opacity: 1;
+}
+
+.gradient-2 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color-gradient-2), 0.8) 0, rgba(var(--color-gradient-2), 0) 50%) no-repeat;
+    mix-blend-mode: var(--mix-blend-mode);
+
+    width: var(--gradient-size);
+    height: var(--gradient-size);
+    top: calc(50% - var(--gradient-size) / 2);
+    left: calc(50% - var(--gradient-size) / 2);
+
+    transform-origin: calc(50% - 400px);
+    animation: moveInCircle 20s reverse infinite;
+
+    opacity: 1;
+}
+
+.gradient-3 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color-gradient-3), 0.8) 0, rgba(var(--color-gradient-3), 0) 50%) no-repeat;
+    mix-blend-mode: var(--mix-blend-mode);
+
+    width: var(--gradient-size);
+    height: var(--gradient-size);
+    top: calc(50% - var(--gradient-size) / 2 + 200px);
+    left: calc(50% - var(--gradient-size) / 2 - 500px);
+
+    transform-origin: calc(50% + 400px);
+    animation: moveInCircle 40s linear infinite;
+
+    opacity: 1;
+}
+
+.gradient-4 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color-gradient-4), 0.8) 0, rgba(var(--color-gradient-4), 0) 50%) no-repeat;
+    mix-blend-mode: var(--mix-blend-mode);
+
+    width: var(--gradient-size);
+    height: var(--gradient-size);
+    top: calc(50% - var(--gradient-size) / 2);
+    left: calc(50% - var(--gradient-size) / 2);
+
+    transform-origin: calc(50% - 200px);
+    animation: moveHorizontal 40s ease infinite;
+
+    opacity: 0.7;
+}
+
+.gradient-5 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color-gradient-5), 0.8) 0, rgba(var(--color-gradient-5), 0) 50%) no-repeat;
+    mix-blend-mode: var(--mix-blend-mode);
+
+    width: calc(var(--gradient-size) * 2);
+    height: calc(var(--gradient-size) * 2);
+    top: calc(50% - var(--gradient-size));
+    left: calc(50% - var(--gradient-size));
+
+    transform-origin: calc(50% - 800px) calc(50% + 200px);
+    animation: moveInCircle 20s ease infinite;
+
+    opacity: 1;
+}
+
+.interactive-gradient {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--controlled-color), 0.8) 0, rgba(var(--controlled-color), 0) 50%) no-repeat;
+    mix-blend-mode: var(--mix-blend-mode);
+    transition-duration: 0.4s;
+
+    width: 50%;
+    height: 50%;
+
+    opacity: 1;
+}

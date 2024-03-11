@@ -1,6 +1,7 @@
 import React from 'react'
 import { technologiesList } from '@/app/data/technologies';
 import { Technology } from '@/app/types/Projects';
+import MiniCard from '../generic/mini-card/MiniCard.Component';
 
 const TechnologiesList = () => {
 
@@ -25,10 +26,10 @@ const TechnologiesList = () => {
                 {
                   technologies[key as Key].map((technology: Technology, index: number) => {
                     return (
-                      <article className={`bg-opacity-5 flex gap-1 justify-evenly hover:bg-opacity-10 bg-gray-400 rounded-sm py-2 px-6 ${technology.isAreaOfFocus ? 'text-gray-300' : 'text-gray-600'}`} key={index}>
+                      <MiniCard className={`flex gap-1 justify-around hover:bg-opacity-10 py-2 px-6 ${!technology.isAreaOfFocus && 'text-gray-500'}`} key={index}>
                         <img src={technology.imageUrl} alt={technology.name} className={"w-6 h-6"}/>
                         <div>{technology.name}</div>
-                      </article>
+                      </MiniCard>
                     )
                   })
                 }
