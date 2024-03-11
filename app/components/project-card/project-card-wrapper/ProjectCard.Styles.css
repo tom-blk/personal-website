@@ -1,0 +1,30 @@
+/* .project-card-front-flip{
+    animation-name: flipFront;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+.project-card-back-flip{
+    animation-name: flipBack;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes flipFront{
+    from{
+        transform: rotateX(0);
+    }
+    to{
+        transform: rotateX(90deg);
+    }
+}
+
+@keyframes flipBack{
+    from{
+        transform: rotateX(90deg);
+    }
+    to{
+        transform: rotateX(0);
+    }
+}
+ */

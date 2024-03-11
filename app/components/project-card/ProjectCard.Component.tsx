@@ -6,18 +6,27 @@ import React, { useState } from 'react'
 import GitHubIconLink from '../github-icon-link/GitHubIconLink.Component';
 
 import { Project } from '../../types/Projects';
+import OnHoverTrigger from '../building-blocks/on-hover-trigger/OnHoverTrigger.Component';
 
-const ProjectCard = (project: Project) => {
+interface Props {
+    project: Project
+    handleHover: () => void;
+}
 
-    const {name, image, gitHubLink, buildLink, description, isDemo} = project;
+const ProjectCard = (props: Props) => {
+
+    const {name, image, gitHubLink, buildLink, description, isDemo} = props.project;
+    const {handleHover} = props;
+
 
     return (
         <Link
-            className={"flex flex-col gap-1 text-gray-300 border border-slate-800 rounded-md p-5 w-60"}
+            className={"p-6 flex flex-col gap-1"}
             target="_blank" 
             href={buildLink ? buildLink : gitHubLink}
         >
             <h3 className={"text-sm"}>{name}</h3>
+            <OnHoverTrigger prompt='Stack' className={"text-xs absolute top-4 right-4"} onHoverFunction={handleHover}/>
             <div className={"grid grow items-center h-16 relative"}>
                 <div className={`${isDemo ? "block" : "hidden"} text-red-900 font-bold text-xs absolute right-0 top-0`}>Demo</div>
                 {
