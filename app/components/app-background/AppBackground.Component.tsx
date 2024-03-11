@@ -10,7 +10,7 @@ import AsteroidStorm from './AsteroidStorm.Component';
 import { GLTFLoader } from 'three/examples/jsm/Addons.js';
 
 
-const BackgroundScene = ({controls}: {controls: "autoPilot" | "mouse"}) => {
+const AppBackground = ({controls}: {controls: "autoPilot" | "mouse"}) => {
 
     const {scene: model} = useLoader(GLTFLoader, "/3d/planets/aerial_rocks_02.gltf")
 
@@ -35,4 +35,4 @@ const BackgroundScene = ({controls}: {controls: "autoPilot" | "mouse"}) => {
      )
 }
 
-export default BackgroundScene
+export default AppBackground

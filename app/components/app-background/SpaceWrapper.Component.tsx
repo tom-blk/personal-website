@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import BackgroundScene from './BackgroundScene.Component'
+import AppBackground from './AppBackground.Component'
 
 const SpaceWrapper = () => {
 
@@ -22,7 +22,7 @@ const SpaceWrapper = () => {
             >
                 Take Control
             </button>
-            <BackgroundScene controls={controls}/>
+            <AppBackground controls={controls}/>
         </div>
     )
 }
