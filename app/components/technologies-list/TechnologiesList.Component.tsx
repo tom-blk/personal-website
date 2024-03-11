@@ -26,7 +26,7 @@ const TechnologiesList = () => {
                 {
                   technologies[key as Key].map((technology: Technology, index: number) => {
                     return (
-                      <MiniCard className={`flex gap-1 justify-evenly hover:bg-opacity-10 py-2 px-6 ${!technology.isAreaOfFocus && 'text-gray-500'}`} key={index}>
+                      <MiniCard className={`flex gap-1 justify-around hover:bg-opacity-10 py-2 px-6 ${!technology.isAreaOfFocus && 'text-gray-500'}`} key={index}>
                         <img src={technology.imageUrl} alt={technology.name} className={"w-6 h-6"}/>
                         <div>{technology.name}</div>
                       </MiniCard>
