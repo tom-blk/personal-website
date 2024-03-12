@@ -3,10 +3,9 @@ import Image from 'next/image';
 import React from 'react'
 
 import GitHubIconLink from '../../github-icon-link/GitHubIconLink.Component';
-import OnHoverTrigger from '../../building-blocks/on-hover-trigger/OnHoverTrigger.Component';
+import OnHoverTrigger from '../../generic/on-hover-trigger/OnHoverTrigger.Component';
 
 import { Project } from '../../../types/Projects';
-
 
 interface Props {
     project: Project
