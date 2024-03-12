@@ -1,8 +1,7 @@
 import React from 'react'
+import Link from 'next/link'
 
 import { Technology } from '@/app/types/Projects'
-import Link from 'next/link'
-import GradientBackground from '../../building-blocks/gradient-background/GradientBackground.Component'
 
 const ProjectCardBackSide = ({technologies} : {technologies: Technology[]}) => { 
 
@@ -16,9 +15,6 @@ const ProjectCardBackSide = ({technologies} : {technologies: Technology[]}) => {
           </Link>
         ))
         }
-      </div>
-      <div className={"w-full left-0 top-0 h-full z-21 absolute"}>
-        <GradientBackground/>
       </div>
     </div>
   )

@@ -12,5 +12,6 @@ export interface Technology{
     name: string,
     imageUrl: string,
     technologyUrl: string,
-    isAreaOfFocus: boolean
+    isAreaOfFocus: boolean,
+    startedLearningDate: Date
 }

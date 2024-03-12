@@ -1,7 +1,7 @@
 import React from 'react'
-import Avatar from '../avatar/Avatar.Component'
-import LocationPin from '../location-pin/LocationPin.Component'
-import Card from '../generic/card/Card.Component';
+import Avatar from '../../generic/avatar/Avatar.Component'
+import LocationPin from '../../generic/location-pin/LocationPin.Component'
+import Card from '../../generic/card/Card.Component';
 
 const ProfileCard = () => {
 

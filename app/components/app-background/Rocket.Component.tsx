@@ -9,7 +9,11 @@ import { RapierRigidBody, RigidBody } from '@react-three/rapier';
 
 const MOVEMENT_SPEED = 0.1;
 
-const Rocket = ({controls}: {controls: "autoPilot" | "mouse"}) => {
+interface Props {
+    isAutopilotRef: MutableRefObject<boolean>
+}
+
+const Rocket = (autopilot: Props) => {
     //Double line breaks because the code is long and complex. 
 
     const rocketModel = useLoader(GLTFLoader, "/3d/rocket/rocket.gltf")
@@ -93,13 +97,13 @@ const Rocket = ({controls}: {controls: "autoPilot" | "mouse"}) => {
     const updateRotationMatrix = (state: RootState) => {
     // The mesh itself doesn't move, but the body does, so we need to create a vector from the body's position
         const rocketBodyRefVector = rocketBodyRef.current.translation();
-        if(controls === "autoPilot"){
+        if(autopilot.isAutopilotRef.current){
             rotationMatrix.lookAt(
                 new THREE.Vector3(rocketBodyRefVector.x, rocketBodyRefVector.y, rocketBodyRefVector.z),
                 targetRef.current.position, 
                 rocketMeshRef.current.up 
             );
-        }else if(controls === "mouse"){
+        }else if(!autopilot.isAutopilotRef.current){
             rotationMatrix.lookAt(
                 new THREE.Vector3(rocketBodyRefVector.x, rocketBodyRefVector.y, rocketBodyRefVector.z),
                 new THREE.Vector3(state.pointer.x, state.pointer.y, 0), 
