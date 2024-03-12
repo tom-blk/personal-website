@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React, { MutableRefObject, Suspense } from 'react'
 
 import { Canvas, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from 'three/examples/jsm/Addons.js';
@@ -10,9 +10,14 @@ import Rocket from './Rocket.Component';
 import AsteroidStorm from './AsteroidStorm.Component';
 import FadeIn from './FadeIn.Component';
 
-const AppBackground = ({controls}: {controls: "autoPilot" | "mouse"}) => {
+interface Props {
+    isAutopilotRef: MutableRefObject<boolean>
+}
+
+const AppBackground = (autopilot: Props) => {
 
     const {scene: model} = useLoader(GLTFLoader, "/3d/planets/aerial_rocks_02.gltf");
+
 
     return (
         <div className={"w-full h-full"}>
@@ -28,7 +33,7 @@ const AppBackground = ({controls}: {controls: "autoPilot" | "mouse"}) => {
                 <Physics gravity={[0,0,0]}>
                     <AsteroidStorm model={model}/>
                     <Planet model={model}/>
-                    <Rocket controls={controls} />
+                    <Rocket isAutopilotRef={autopilot.isAutopilotRef} />
                 </Physics>
                 </Canvas>
             </Suspense>

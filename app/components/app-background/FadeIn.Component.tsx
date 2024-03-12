@@ -1,5 +1,5 @@
 import { useFrame, useThree } from '@react-three/fiber'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 const FadeIn = () => {
 

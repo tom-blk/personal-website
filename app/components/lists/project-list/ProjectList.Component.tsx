@@ -1,7 +1,7 @@
 import React from 'react'
 import { Project } from '@/app/types/Projects'
 import { html, css, mysql, react, typescript, node, express, next, tailwind } from '@/app/data/technologies'
-import ProjectCardFlipper from '../project-card/project-card-flipper/ProjectCardFlipper.Component'
+import ProjectCardFlipper from '../../cards/project-card/project-card-flipper/ProjectCardFlipper.Component'
 
 const ProjectList= () => {
 

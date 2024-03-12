@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 
-import Card from '../../generic/card/Card.Component';
+import Card from '@/app/components/generic/card/Card.Component';
 import ProjectCardFrontSide from '../project-card-sides/ProjectCardFrontSide.Component'
 import ProjectCardBackSide from '../project-card-sides/ProjectCardBackSide.Component';
 

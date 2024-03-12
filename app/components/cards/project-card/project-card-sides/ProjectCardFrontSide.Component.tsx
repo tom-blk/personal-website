@@ -2,10 +2,10 @@ import Link from 'next/link'
 import Image from 'next/image';
 import React from 'react'
 
-import GitHubIconLink from '../../github-icon-link/GitHubIconLink.Component';
-import OnHoverTrigger from '../../generic/on-hover-trigger/OnHoverTrigger.Component';
+import GitHubIconLink from '@/app/components/github-icon-link/GitHubIconLink.Component';
+import OnHoverTrigger from '@/app/components/generic/on-hover-trigger/OnHoverTrigger.Component';
 
-import { Project } from '../../../types/Projects';
+import { Project } from '@/app/types/Projects';
 
 interface Props {
     project: Project
@@ -14,8 +14,8 @@ interface Props {
 
 const ProjectCardFrontSide = (props: Props) => {
 
-    const {name, image, gitHubLink, buildLink, description, isDemo} = props.project;
-    const {handleHover} = props;
+    const { name, image, gitHubLink, buildLink, description, isDemo } = props.project;
+    const { handleHover } = props;
 
 
     return (

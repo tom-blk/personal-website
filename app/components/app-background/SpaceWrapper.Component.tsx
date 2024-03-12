@@ -1,28 +1,25 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import AppBackground from './AppBackground.Component'
 
 const SpaceWrapper = () => {
 
-    const [controls, setControls] = useState<"mouse" | "autoPilot">("autoPilot")
+    const isAutopilotRef = useRef(true);
 
     const handleControlChange = () => {
-        if(controls === "autoPilot"){
-            setControls("mouse")
-        } else {
-            setControls("autoPilot")
-        }
+        isAutopilotRef.current = !isAutopilotRef.current;
+        console.log("click")
     }
 
     return (
         <div className={"w-full h-full fixed -z-10"}>
             <button
                 onClick={handleControlChange}
-                className={"absolute top-8 right-8 border border-red-900 z-10 rounded-md p-3"}
+                className={"z-20 absolute top-8 right-8 border border-red-900 z-10 rounded-md p-3"}
             >
                 Take Control
             </button>
-            <AppBackground controls={controls}/>
+            <AppBackground isAutopilotRef={isAutopilotRef}/>
         </div>
     )
 }

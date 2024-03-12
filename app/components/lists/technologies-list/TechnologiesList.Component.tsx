@@ -1,7 +1,8 @@
 import React from 'react'
 import { technologiesList } from '@/app/data/technologies';
 import { Technology } from '@/app/types/Projects';
-import MiniCard from '../generic/mini-card/MiniCard.Component';
+import MiniCard from '../../generic/mini-card/MiniCard.Component';
+import TechnologyCard from '../../cards/technology-card/TechnologyCard.Component';
 
 const TechnologiesList = () => {
 
@@ -13,7 +14,7 @@ const TechnologiesList = () => {
     <div className={"grid gap-3"}>
       <h2 className={"font-bold"}>Technologies</h2>
       <div className={"text-xs"}>
-        <div className={"text-gray-600"}>&#x25C9; Still learning</div>
+        <div className={"text-gray-500"}>&#x25C9; Still learning</div>
         <div className={"text-gray-300"}>&#x25C9; Still learning but I don't feel like an idiot</div>
       </div>
       <div className={"grid grid-cols-3 gap-20"}>
@@ -26,10 +27,10 @@ const TechnologiesList = () => {
                 {
                   technologies[key as Key].map((technology: Technology, index: number) => {
                     return (
-                      <MiniCard className={`flex gap-1 justify-around hover:bg-opacity-10 py-2 px-6 ${!technology.isAreaOfFocus && 'text-gray-500'}`} key={index}>
+                      <TechnologyCard className={`${technology.isAreaOfFocus ? "text-gray-300" : "text-gray-500"}`} key={index}>
                         <img src={technology.imageUrl} alt={technology.name} className={"w-6 h-6"}/>
                         <div>{technology.name}</div>
-                      </MiniCard>
+                      </TechnologyCard>
                     )
                   })
                 }
