@@ -1,33 +1,10 @@
 import React from 'react'
-import { Project } from '@/app/types/Projects'
-import { html, css, mysql, react, typescript, node, express, next, tailwind } from '@/app/data/technologies'
 import ProjectCardFlipper from '../../cards/project-card/project-card-flipper/ProjectCardFlipper.Component'
+import { allProjects } from '@/app/data/projects'
 
 const ProjectList= () => {
 
-    const projects: Project[]  = [
-        {
-            name: "Prometheus", 
-            image: "/images/projects/prometheus.png", 
-            gitHubLink: "https://github.com/tom-blk/reciprocal-services-webapp", 
-            buildLink: "https://frontend.prometheus-backend.top/", 
-            description: "Trading platform for local communities", 
-            technologies: [
-                react, typescript, html, css, mysql, node, express,
-                {name: "JWT", imageUrl:"/svg/jwt.svg", technologyUrl: "https://jwt.io/", isAreaOfFocus: false},
-            ],
-            isDemo: true
-        },
-        {
-            name: "This Website", 
-            image: "", 
-            gitHubLink: "https://github.com/tom-blk/personal-website", 
-            buildLink: undefined, 
-            description: "Personal Website", 
-            technologies: [next, react, typescript, tailwind, html, css],
-            isDemo: false
-        }
-    ]
+    const projects = allProjects
 
   return (
     <div className={"grid gap-4"}>

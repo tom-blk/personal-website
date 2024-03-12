@@ -1,7 +1,7 @@
 'use client'
 import React, { ReactNode, useState } from 'react'
 import MiniCard from '../../generic/mini-card/MiniCard.Component'
-import OnHoverView from '../../on-hover-view/OnHoverView.Component'
+import TechnologyDetailsCard from '../technology-details-card/TechnologyDetailsCard.Component'
 
 interface Props{
     children: ReactNode,
@@ -20,7 +20,7 @@ const TechnologyCard = (props: Props) => {
                 {
                 isHovered
                 ?
-                <OnHoverView />
+                <TechnologyDetailsCard professionalExperience={1} positions='Front End Developer @PowMio' projects='Prometheus' generalExperience={3}/>
                 :
                 <></>
                 }

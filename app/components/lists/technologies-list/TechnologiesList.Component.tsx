@@ -1,12 +1,17 @@
 import React from 'react'
 import { technologiesList } from '@/app/data/technologies';
 import { Technology } from '@/app/types/Projects';
-import MiniCard from '../../generic/mini-card/MiniCard.Component';
 import TechnologyCard from '../../cards/technology-card/TechnologyCard.Component';
+import { allPositions } from '@/app/data/positions';
+import { allProjects } from '@/app/data/projects';
 
 const TechnologiesList = () => {
 
-  const technologies = technologiesList;
+  const technologies = technologiesList
+
+  const positions = allPositions;
+
+  const projects = allProjects;
 
   type Key = keyof typeof technologies;
 

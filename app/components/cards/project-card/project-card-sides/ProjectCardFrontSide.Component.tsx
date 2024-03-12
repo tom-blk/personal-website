@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image';
 import React from 'react'
 
-import GitHubIconLink from '@/app/components/github-icon-link/GitHubIconLink.Component';
+import GitHubIconLink from '@/app/components/generic/github-icon-link/GitHubIconLink.Component';
 import OnHoverTrigger from '@/app/components/generic/on-hover-trigger/OnHoverTrigger.Component';
 
 import { Project } from '@/app/types/Projects';
