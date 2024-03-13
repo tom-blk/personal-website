@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
-import GradientBackground from '../gradient-background/GradientBackground.Component';
+
+import './CardWrapper.Styles.css'
 
 interface Props{
     children: ReactNode,
@@ -10,11 +11,10 @@ const CardWrapper = (props: Props) => {
     const {children, className} = props;
 
     return (
-        <article className={"relative text-gray-300 bg-black bg-opacity-60 border border-slate-800 rounded-md"}>
+        <article className={"relative text-gray-300 border border-slate-800 rounded-md card-wrapper-background"}>
             <div className={`z-10 relative ${className}`}>
                 {children}
             </div>
-            <GradientBackground/>
         </article>
     )
 }

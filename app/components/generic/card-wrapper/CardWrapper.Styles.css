@@ -1,0 +1,42 @@
+.card-wrapper-background{
+    background-image: radial-gradient(circle, #4b080820, #1a032a3c, #3f07072b, #1c042c40);
+    background-size: 400%;
+    animation: moveBg 25s ease-in-out infinite;
+}
+
+.card-hover:hover{
+    animation: hoverCard 0.1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hoverCard{
+    0%{
+        transform: scale(1) translateZ(0.01px);
+    }
+    100%{
+        transform: scale(1.005);
+    }
+}
+
+@keyframes moveBg{
+    0%{
+        background-position:bottom left;
+        background-size: 400%;
+    }
+    25%{
+        background-position:top left;
+        background-size: 600%;
+    }
+    50%{
+        background-position:top right;
+        background-size: 800%;
+    }
+    75%{
+        background-position:bottom right;
+        background-size: 600%;
+    }
+    100%{
+        background-position:bottom left;
+        background-size: 400%;
+    }
+}
