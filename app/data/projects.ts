@@ -1,4 +1,4 @@
-import { Project } from "../types/Projects"
+import { Project } from "../types/AppTypes"
 import { css, express, html, mysql, next, node, react, tailwind, typescript } from "./technologies"
 
 export const allProjects: Project[]  = [

@@ -15,3 +15,15 @@ export interface Technology{
     isAreaOfFocus: boolean,
     startedLearningDate: Date
 }
+
+export interface Position{
+    name: string;
+    company: string;
+    companyLogo: string;
+    linkedInUrl: string;
+    location: string;
+    locationUrl: string;
+    joinedDate: string;
+    leftDate: string;
+    technologies: Technology[];
+}

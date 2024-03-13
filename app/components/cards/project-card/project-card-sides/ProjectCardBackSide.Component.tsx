@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { Technology } from '@/app/types/Projects'
+import { Technology } from '@/app/types/AppTypes'
 
 const ProjectCardBackSide = ({technologies} : {technologies: Technology[]}) => { 
 

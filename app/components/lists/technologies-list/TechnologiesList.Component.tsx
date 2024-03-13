@@ -1,6 +1,6 @@
 import React from 'react'
 import { technologiesList } from '@/app/data/technologies';
-import { Technology } from '@/app/types/Projects';
+import { Technology } from '@/app/types/AppTypes';
 import TechnologyCard from '../../cards/technology-card/TechnologyCard.Component';
 import { allPositions } from '@/app/data/positions';
 import { allProjects } from '@/app/data/projects';

@@ -5,7 +5,7 @@ import React from 'react'
 import GitHubIconLink from '@/app/components/generic/github-icon-link/GitHubIconLink.Component';
 import OnHoverTrigger from '@/app/components/generic/on-hover-trigger/OnHoverTrigger.Component';
 
-import { Project } from '@/app/types/Projects';
+import { Project } from '@/app/types/AppTypes';
 
 interface Props {
     project: Project

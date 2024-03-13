@@ -2,6 +2,7 @@ import Footer from "./components/footer/Footer.Component";
 import ProfileCard from "./components/cards/profile-card/ProfileCard.Component";
 import ProjectList from "./components/lists/project-list/ProjectList.Component";
 import TechnologiesList from "./components/lists/technologies-list/TechnologiesList.Component";
+import PositionsList from "./components/lists/positions-list/PositionsList.Component";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <ProfileCard/>
       <TechnologiesList/>
       <ProjectList/>
+      <PositionsList/>
       <Footer/>
     </div>
   );
