@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-import Card from '../../generic/card/Card.Component'
+import CardWrapper from '../../generic/card-wrapper/CardWrapper.Component'
 import TechnologyLogoList from '../../lists/technology-logo-list/TechnologyLogoList.Component'
 
 import { Position } from '@/app/types/AppTypes'
@@ -16,7 +16,7 @@ const PositionCard = ({position}: Props) => {
 
 	return (
 		<Link href={linkedInUrl} target='_blank'>
-			<Card className={"p-6 grid gap-3 w-80"}>
+			<CardWrapper className={"p-6 grid gap-3 w-80"}>
 				<div className={"h-20 flex gap-3"}>
 					{
 						companyLogo
@@ -31,7 +31,7 @@ const PositionCard = ({position}: Props) => {
 				</div>
 				<div className={"text-xs"}>Technologies Used: </div>
 				<TechnologyLogoList columns={6} technologies={technologies}/>
-			</Card>
+			</CardWrapper>
 		</Link>
 	)
 }

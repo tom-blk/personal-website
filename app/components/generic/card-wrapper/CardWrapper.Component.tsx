@@ -6,7 +6,7 @@ interface Props{
     className?: string
 }
 
-const Card = (props: Props) => {
+const CardWrapper = (props: Props) => {
     const {children, className} = props;
 
     return (
@@ -19,4 +19,4 @@ const Card = (props: Props) => {
     )
 }
 
-export default Card
+export default CardWrapper

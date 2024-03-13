@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 
-import Card from '@/app/components/generic/card/Card.Component';
+import CardWrapper from '@/app/components/generic/card-wrapper/CardWrapper.Component';
 import ProjectCardFrontSide from '../project-card-sides/ProjectCardFrontSide.Component'
 import ProjectCardBackSide from '../project-card-sides/ProjectCardBackSide.Component';
 
@@ -22,7 +22,7 @@ const ProjectCardFlipper = (project: Project) => {
     }
 
     return (
-        <Card>
+        <CardWrapper>
             <div onMouseLeave={handleOnMouseOut} className={"relative w-60 h-44"}>
                 <div className={`relative w-full project-card-flipper-${animtaionSide}`}>
                     <div className={'project-card-front'}>
@@ -33,7 +33,7 @@ const ProjectCardFlipper = (project: Project) => {
                     </div> 
                 </div>
             </div>
-        </Card>
+        </CardWrapper>
     )
 }
 

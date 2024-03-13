@@ -1,6 +1,6 @@
 'use client'
 import React, { ReactNode, useState } from 'react'
-import MiniCard from '../../generic/mini-card/MiniCard.Component'
+import MiniCardWrapper from '../../generic/mini-card-wrapper/MiniCardWrapper.Component'
 import TechnologyDetailsCard from '../technology-details-card/TechnologyDetailsCard.Component'
 
 interface Props{
@@ -15,7 +15,7 @@ const TechnologyCard = (props: Props) => {
 
     return (
         <div className={`${className}`} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-            <MiniCard className={"relative flex gap-1 justify-around hover:bg-opacity-10 py-2 px-6"}>
+            <MiniCardWrapper className={"relative flex gap-1 justify-around hover:bg-opacity-10 py-2 px-6"}>
                 {children}
                 {
                 isHovered
@@ -24,7 +24,7 @@ const TechnologyCard = (props: Props) => {
                 :
                 <></>
                 }
-            </MiniCard>
+            </MiniCardWrapper>
         </div>
   )
 }

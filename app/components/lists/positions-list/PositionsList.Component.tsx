@@ -1,19 +1,20 @@
 import React from 'react'
-import { allPositions } from '@/app/data/positions'
 import PositionCard from '../../cards/position-card/PositionCard.Component'
+import ListWrapper from '../../generic/list-wrapper/ListWrapper.Component'
+
+import { allPositions } from '@/app/data/positions'
 
 const PositionsList = () => {
   return (
-    <div>
-        <h2 className={"font-bold"}>Positions</h2>
-        {
-            allPositions.map((position, index) => {
-                return (
-                    <PositionCard key={index} position={position}/>
-                )
-            })
-        }
-    </div>
+    <ListWrapper listName='Positions'>
+      {
+        allPositions.map((position, index) => {
+            return (
+                <PositionCard key={index} position={position}/>
+            )
+        })
+      }
+    </ListWrapper>
   )
 }
 

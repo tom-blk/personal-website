@@ -5,7 +5,7 @@ interface Props{
     className?: string
 }
 
-const MiniCard = (props: Props) => {
+const MiniCardWrapper = (props: Props) => {
     const {children, className} = props;
 
     return (
@@ -15,4 +15,4 @@ const MiniCard = (props: Props) => {
     )
 }
 
-export default MiniCard
+export default MiniCardWrapper
