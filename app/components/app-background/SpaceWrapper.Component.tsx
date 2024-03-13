@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import AppBackground from './AppBackground.Component'
 
 const SpaceWrapper = () => {
@@ -15,7 +15,7 @@ const SpaceWrapper = () => {
         <div className={"w-full h-full fixed -z-10"}>
             <button
                 onClick={handleControlChange}
-                className={"z-20 absolute top-8 right-8 border border-red-900 z-10 rounded-md p-3"}
+                className={"absolute top-8 right-8 border border-red-900 z-10 rounded-md p-3"}
             >
                 Take Control
             </button>
