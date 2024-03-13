@@ -27,3 +27,12 @@ export interface Position{
     leftDate: string;
     technologies: Technology[];
 }
+
+export interface Article{
+    title: string;
+    description: string;
+    articleUrl: string;
+    imageUrl: string;
+    publishedDate: string;
+    platform: string;
+}

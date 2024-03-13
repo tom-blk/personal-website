@@ -3,6 +3,7 @@ import ProfileCard from "./components/cards/profile-card/ProfileCard.Component";
 import ProjectList from "./components/lists/project-list/ProjectList.Component";
 import TechnologiesList from "./components/lists/technologies-list/TechnologiesList.Component";
 import PositionsList from "./components/lists/positions-list/PositionsList.Component";
+import ArticlesList from "./components/lists/articles-list/ArticlesList.Component";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <TechnologiesList/>
       <ProjectList/>
       <PositionsList/>
+      <ArticlesList />
       <Footer/>
     </div>
   );

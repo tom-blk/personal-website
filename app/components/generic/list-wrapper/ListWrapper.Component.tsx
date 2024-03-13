@@ -6,14 +6,16 @@ interface Props {
 }
 
 const ListWrapper = (props: Props) => {
-    const { listName, children } = props;
+  const { listName, children } = props;
+
+  console.log(children)
 
   return (
     <div className={"grid gap-4"}>
-        <div className={"font-bold"}>{listName}</div>
-        <div className={"flex flex-wrap gap-3 w-full"}>
-            {children}
-        </div>
+      <div className={"font-bold"}>{listName}</div>
+      <div className={"flex flex-wrap gap-3 w-full"}>
+          {children}
+      </div>
     </div>
   )
 }
