@@ -1,11 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import CardWrapper from '../../generic/card-wrapper/CardWrapper.Component'
 import TechnologyLogoList from '../../lists/technology-logo-list/TechnologyLogoList.Component'
 
 import { Position } from '@/app/types/AppTypes'
-import Link from 'next/link'
 
 interface Props{
 		position: Position
@@ -30,7 +30,7 @@ const PositionCard = ({position}: Props) => {
 					</div>
 				</div>
 				<div className={"text-xs"}>Technologies Used: </div>
-				<TechnologyLogoList columns={6} technologies={technologies}/>
+				<TechnologyLogoList columns={8} technologies={technologies}/>
 			</CardWrapper>
 		</Link>
 	)

@@ -18,7 +18,9 @@ const ProjectCardFlipper = (project: Project) => {
     }
 
     const handleOnMouseOut = () => {
-        setAnimationSide("back");
+        setTimeout(() => {
+            setAnimationSide("back");
+        }, 100)
     }
 
     return (

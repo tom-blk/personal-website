@@ -1,7 +1,7 @@
+'use client'
 import React from 'react'
 
 import { Technology } from '@/app/types/AppTypes'
-import Link from 'next/link'
 
 interface Props{
     technologies: Technology[]
@@ -11,13 +11,17 @@ interface Props{
 const TechnologyLogoList = (props : Props) => {
     const {technologies, columns} = props
 
+    const navigateToTechnologyUrl = (url: string) => {
+        window.open(url, '_blank')
+    }
+
     return (
-        <div className={`w-full h-full z-20 grid grid-cols-8 gap-3`}>
+        <div className={`w-full h-full z-20 grid grid-cols-${columns} gap-3`}>
                 {
                 technologies.map((technology, index) => (
-                    <Link key={index} href={technology.technologyUrl} target="_blank">
+                    <article className={"hover:cursor-pointer"} key={index} onClick={() => navigateToTechnologyUrl(technology.technologyUrl)}>
                         <img className={"w-full h-auto"} src={technology.imageUrl} alt={technology.name}/>
-                    </Link>
+                    </article>
                 ))
                 }
         </div>

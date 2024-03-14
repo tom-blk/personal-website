@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react'
+'use client'
+import React, { ReactNode, useEffect } from 'react'
 
 interface Props {
     listName: string;
@@ -8,15 +9,19 @@ interface Props {
 const ListWrapper = (props: Props) => {
   const { listName, children } = props;
 
-  console.log(children)
+  useEffect(() => {
+    console.log(children)
+  }, [])
 
   return (
-    <div className={"grid gap-4"}>
-      <div className={"font-bold"}>{listName}</div>
-      <div className={"flex flex-wrap gap-3 w-full"}>
-          {children}
+    <>
+      <div className={"grid gap-4"}>
+        <div className={"font-bold"}>{listName}</div>
+        <div className={"flex flex-wrap gap-3 w-full"}>
+            {children}
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 
