@@ -131,9 +131,8 @@ const Rocket = (autopilot: Props) => {
         //but it needs to be rotated for the lookAt() function to work correctly in this context
         const { rotate } = props;
         const rocket = rocketModel.scene;
-        rocket.rotateX(rotate.x);
-        rocket.rotateY(rotate.y);
-        rocket.rotateZ(rotate.z);
+        const euler = new THREE.Euler(rotate.x, rotate.y, rotate.z, 'XYZ');
+        rocket.setRotationFromEuler(euler);
         return (
             <primitive object={rocket} />
         ); 

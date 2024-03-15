@@ -16,14 +16,10 @@ interface Props {
 
 const AppBackground = (autopilot: Props) => {
 
-    const {scene: model} = useLoader(GLTFLoader, "/3d/planets/aerial_rocks_02.gltf");
-
-
     return (
         <div className={"w-full h-full"}>
             <Suspense fallback={null}>
                 <Canvas gl={{
-                    pixelRatio: window.devicePixelRatio,
                     antialias: true,
                 }} shadows>
                 <FadeIn/>
@@ -31,8 +27,7 @@ const AppBackground = (autopilot: Props) => {
                 <pointLight position={[0, 0, 0]} intensity={3} />
                 <Space/>
                 <Physics gravity={[0,0,0]}>
-                    <AsteroidStorm model={model}/>
-                    <Planet model={model}/>
+                    <Planet/>
                     <Rocket isAutopilotRef={autopilot.isAutopilotRef} />
                 </Physics>
                 </Canvas>

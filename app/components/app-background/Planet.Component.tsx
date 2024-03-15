@@ -1,16 +1,18 @@
 import React, {useRef} from 'react'
-import { useFrame } from '@react-three/fiber'
-import { Group, Mesh, Object3DEventMap } from 'three'
+import { useFrame, useLoader } from '@react-three/fiber'
+import { Mesh } from 'three'
 import { RapierRigidBody, RigidBody } from '@react-three/rapier'
+import { GLTFLoader } from 'three/examples/jsm/Addons.js'
 
-interface PlanetProps{
-    model: Group<Object3DEventMap>
-}
-
-const Planet = ({model}: PlanetProps) => {
+const Planet = () => {
 
     const ref = useRef<Mesh>(null!)
     const bodyRef = useRef<RapierRigidBody>(null!)
+
+    const url = "/3d/planets/aerial_rocks_02.gltf";
+
+    const {scene: model} = useLoader(GLTFLoader, url);
+
 
     useFrame(() => {
         ref.current.rotation.y += 0.0008
