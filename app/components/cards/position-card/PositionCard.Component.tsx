@@ -30,7 +30,7 @@ const PositionCard = ({position}: Props) => {
 					</div>
 				</div>
 				<div className={"text-xs"}>Technologies Used: </div>
-				<TechnologyLogoList columns={8} technologies={technologies}/>
+				<TechnologyLogoList tailwindColumns='grid-cols-8' technologies={technologies}/>
 			</CardWrapper>
 		</Link>
 	)
