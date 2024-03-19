@@ -8,6 +8,7 @@ import { degToRad } from 'three/src/math/MathUtils.js';
 import { RapierRigidBody, RigidBody } from '@react-three/rapier';
 
 const MOVEMENT_SPEED = 0.1;
+const ROTATION_SPEED = 1;
 
 interface Props {
     isAutopilotRef: MutableRefObject<boolean>
@@ -22,7 +23,7 @@ const Rocket = (autopilot: Props) => {
     const targetRef = useRef<Mesh>(null!);
 
 
-    const rotationSpeed = 1;
+    
     const spherical = new THREE.Spherical();
     const rotationMatrix = new THREE.Matrix4();
     const targetQuaternion = new THREE.Quaternion();
@@ -63,7 +64,7 @@ const Rocket = (autopilot: Props) => {
     const animate = (delta: number, impulseDirection: {x: number, y: number, z: number}) => {
     // If the rocket is not at the target rotation, rotate it towards the target
         if(!rocketMeshRef.current.quaternion.equals(targetQuaternion)) {
-            const step = delta * rotationSpeed
+            const step = delta * ROTATION_SPEED
             rocketMeshRef.current.quaternion.rotateTowards(targetQuaternion, step);
             rocketBodyRef.current.setAngularDamping(MOVEMENT_SPEED * 15);
             rocketBodyRef.current.setLinearDamping(MOVEMENT_SPEED * 15);
