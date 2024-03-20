@@ -1,4 +1,4 @@
-import React, { MutableRefObject, Suspense } from 'react'
+import React, { MutableRefObject, Suspense, useEffect } from 'react'
 
 import { Canvas, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from 'three/examples/jsm/Addons.js';
@@ -10,14 +10,25 @@ import Rocket from './Rocket.Component';
 import AsteroidStorm from './AsteroidStorm.Component';
 import FadeIn from './FadeIn.Component';
 
+import './AppBackground.Styles.css'
+
 interface Props {
     isAutopilotRef: MutableRefObject<boolean>
 }
 
 const AppBackground = (autopilot: Props) => {
 
+    useEffect(() => {
+        const setWindowHeightVariable = () => {
+            const vh = window.innerHeight;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        setWindowHeightVariable();
+    }, [])
+
     return (
-        <div className={"w-full h-full fixed"}>
+        <div className={"w-full custom-vh fixed"}>
             <Suspense fallback={null}>
                 <Canvas gl={{
                     antialias: true,

@@ -11,7 +11,7 @@ const ProfileCard = () => {
     <CardWrapper className={"p-7 gap-1 justify-items-center grid w-fit"}>
       <Avatar/>
       <header className={"w-fit"}>Tom Bleek</header>
-      <p className={"text-xs w-fit"}>Junior Developer</p>
+      <p className={"text-xs w-fit"}>Software Developer</p>
       <LocationPin locationLink={locationLink} textSize="xs" location={'Västra Götaland, Sweden'}/>
     </CardWrapper>
   )
