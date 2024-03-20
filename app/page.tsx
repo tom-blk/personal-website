@@ -7,7 +7,7 @@ import ArticlesList from "./components/lists/articles-list/ArticlesList.Componen
 
 export default function Home() {
   return (
-    <div className={"my-10 grid gap-8 justify-items-center w-full"}>
+    <div className={"m-10 grid gap-8 justify-items-center w-full"}>
       <ProfileCard/>
       <TechnologiesList/>
       <ProjectList/>

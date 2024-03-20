@@ -17,7 +17,7 @@ interface Props {
 const AppBackground = (autopilot: Props) => {
 
     return (
-        <div className={"w-full h-full"}>
+        <div className={"w-full h-full fixed"}>
             <Suspense fallback={null}>
                 <Canvas gl={{
                     antialias: true,
