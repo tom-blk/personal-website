@@ -15,7 +15,7 @@ const TechnologyCard = (props: Props) => {
 
     return (
         <div className={`${className}`} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-            <MiniCardWrapper className={"relative flex gap-1 justify-around hover:bg-opacity-10 py-2 px-6"}>
+            <MiniCardWrapper className={"relative grid place-items-center gap-1 hover:bg-opacity-10 py-2 px-3"}>
                 {children}
                 {
                 isHovered

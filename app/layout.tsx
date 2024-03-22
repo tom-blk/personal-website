@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+
 import SpaceWrapper from "./components/wrappers/space-wrapper/SpaceWrapper.Component";
 import PageWrapper from "./components/wrappers/page-wrapper/PageWrapper.Component";
 
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Tom Bleek",
@@ -18,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={"grid justify-center"}>
+      <body className={"grid py-6 justify-center"}>
         <PageWrapper>
           {children}
         </PageWrapper>

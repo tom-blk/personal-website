@@ -7,6 +7,7 @@ import { allPositions } from '@/app/data/positions'
 const PositionsList = () => {
   return (
     <ListWrapper listName='Positions'>
+      <div className={"grid gap-3 md:grid-cols-2 lg:grid-cols-3"}>
       {
         allPositions.map((position, index) => {
             return (
@@ -14,6 +15,7 @@ const PositionsList = () => {
             )
         })
       }
+      </div>
     </ListWrapper>
   )
 }

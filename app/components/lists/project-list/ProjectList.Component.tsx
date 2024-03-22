@@ -9,6 +9,7 @@ const ProjectList= () => {
 
   return (
     <ListWrapper listName='Projects'>
+        <div className={"grid gap-3 md:grid-cols-2 lg:grid-cols-3"}>
         {
             projects.map((project, index) => {
                 return (
@@ -16,6 +17,7 @@ const ProjectList= () => {
                 )
             })
         }
+        </div>
     </ListWrapper>
   )
 }
