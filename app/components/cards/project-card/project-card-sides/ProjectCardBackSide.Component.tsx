@@ -6,7 +6,7 @@ import TechnologyLogoList from '@/app/components/lists/technology-logo-list/Tech
 const ProjectCardBackSide = ({technologies} : {technologies: Technology[]}) => { 
 
   return (
-    <div className={"relative p-6"}>
+    <div className={"relative p-6 lg:p-8"}>
       <TechnologyLogoList technologies={technologies} tailwindColumns={"grid-cols-4"} tailwindColumnsLarge={"lg:grid-cols-5"}/>
     </div>
   )
