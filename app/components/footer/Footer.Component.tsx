@@ -9,11 +9,11 @@ const Footer = () => {
   ]
 
   return (
-    <footer className={"flex gap-4"}>
+    <footer className={"flex gap-4 lg:text-lg"}>
       {
       links.map((link, index) => (
         <div key={index} className={`flex items-center ${link.name === "LinkedIn" ? "gap-1" : "gap-2"}`}>
-          <img className={"w-6"} src={link.icon} alt={link.name}/>
+          <img className={"w-6 lg:w-8"} src={link.icon} alt={link.name}/>
           <Link key={index} target='_blank' href={link.href}>{link.name}</Link>
         </div>
       ))
