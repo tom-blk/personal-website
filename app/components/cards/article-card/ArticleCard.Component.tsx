@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-import CardWrapper from '../../generic/card-wrapper/CardWrapper.Component'
+import CardWrapper from '../../wrappers/card-wrapper/CardWrapper.Component'
 
 import { Article } from '@/app/types/AppTypes'
 import Link from 'next/link'

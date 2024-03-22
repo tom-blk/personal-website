@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 
-import CardWrapper from '@/app/components/generic/card-wrapper/CardWrapper.Component';
+import CardWrapper from '@/app/components/wrappers/card-wrapper/CardWrapper.Component';
 import ProjectCardFrontSide from '../project-card-sides/ProjectCardFrontSide.Component'
 import ProjectCardBackSide from '../project-card-sides/ProjectCardBackSide.Component';
 

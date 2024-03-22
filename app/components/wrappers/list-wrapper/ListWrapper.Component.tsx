@@ -17,9 +17,7 @@ const ListWrapper = (props: Props) => {
     <>
       <div className={"grid gap-4"}>
         <div className={"font-bold"}>{listName}</div>
-        <div className={"flex flex-wrap gap-3 w-full"}>
-            {children}
-        </div>
+        {children}
       </div>
     </>
   )

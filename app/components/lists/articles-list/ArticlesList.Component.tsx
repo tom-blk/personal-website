@@ -1,7 +1,7 @@
 import React from 'react'
 
 import ArticleCard from '../../cards/article-card/ArticleCard.Component'
-import ListWrapper from '../../generic/list-wrapper/ListWrapper.Component'
+import ListWrapper from '../../wrappers/list-wrapper/ListWrapper.Component'
 
 import { articles } from '@/app/data/articles'
 

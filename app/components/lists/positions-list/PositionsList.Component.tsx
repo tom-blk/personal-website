@@ -1,6 +1,6 @@
 import React from 'react'
 import PositionCard from '../../cards/position-card/PositionCard.Component'
-import ListWrapper from '../../generic/list-wrapper/ListWrapper.Component'
+import ListWrapper from '../../wrappers/list-wrapper/ListWrapper.Component'
 
 import { allPositions } from '@/app/data/positions'
 

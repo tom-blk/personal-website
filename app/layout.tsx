@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import SpaceWrapper from "./components/app-background/SpaceWrapper.Component";
-import PageWrapper from "./components/app-background/PageWrapper.Component";
+import SpaceWrapper from "./components/wrappers/space-wrapper/SpaceWrapper.Component";
+import PageWrapper from "./components/wrappers/page-wrapper/PageWrapper.Component";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={"grid grid-rows-1 grid-cols-1"}>
+      <body className={"grid justify-center"}>
         <PageWrapper>
           {children}
         </PageWrapper>

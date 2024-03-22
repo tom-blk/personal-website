@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useRef } from 'react'
-import AppBackground from './AppBackground.Component'
+import AppBackground from '../../app-background/AppBackground.Component'
 
 const SpaceWrapper = () => {
 

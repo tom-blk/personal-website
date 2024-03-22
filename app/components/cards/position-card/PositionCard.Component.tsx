@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import CardWrapper from '../../generic/card-wrapper/CardWrapper.Component'
+import CardWrapper from '../../wrappers/card-wrapper/CardWrapper.Component'
 import TechnologyLogoList from '../../lists/technology-logo-list/TechnologyLogoList.Component'
 
 import { Position } from '@/app/types/AppTypes'

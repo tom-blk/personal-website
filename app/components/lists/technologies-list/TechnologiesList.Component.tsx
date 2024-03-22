@@ -4,7 +4,7 @@ import { Technology } from '@/app/types/AppTypes';
 import TechnologyCard from '../../cards/technology-card/TechnologyCard.Component';
 import { allPositions } from '@/app/data/positions';
 import { allProjects } from '@/app/data/projects';
-import ListWrapper from '../../generic/list-wrapper/ListWrapper.Component';
+import ListWrapper from '../../wrappers/list-wrapper/ListWrapper.Component';
 
 const TechnologiesList = () => {
 
@@ -17,8 +17,8 @@ const TechnologiesList = () => {
   type Key = keyof typeof technologies;
 
   return (
-    <ListWrapper listName='Technologies'>
-      <div className={"grid grid-cols-3 gap-20"}>
+    <ListWrapper listName="Technologies">
+      <div className={"grid grid-cols-tech-card gap-3"}>
       {
         Object.keys(technologies).map((key: string, index: number) => {
           return (
