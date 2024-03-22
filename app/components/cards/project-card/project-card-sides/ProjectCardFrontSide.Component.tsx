@@ -20,23 +20,23 @@ const ProjectCardFrontSide = (props: Props) => {
 
     return (
         <Link
-            className={"p-6 flex flex-col gap-1"}
+            className={"h-full p-6 flex flex-col justify-between lg:p-8"}
             target="_blank" 
             href={buildLink ? buildLink : gitHubLink}
         >
-            <h3 className={"text-sm"}>{name}</h3>
-            <OnHoverTrigger prompt='Stack' className={"text-xs absolute top-4 right-4"} onHoverFunction={handleHover}/>
+            <h3 className={"text-sm lg:text-lg"}>{name}</h3>
+            <OnHoverTrigger prompt='Stack' className={"text-xs absolute top-4 right-4 lg:top-6 lg:right-6 lg:text-sm"} onHoverFunction={handleHover}/>
             <div className={"grid grow items-center h-16 relative"}>
-                <div className={`${isDemo ? "block" : "hidden"} text-red-900 font-bold text-xs absolute right-0 top-0`}>Demo</div>
+                <div className={`${isDemo ? "block" : "hidden"} text-red-900 font-bold text-xs absolute right-0 top-0 lg:text-sm`}>Demo</div>
                 {
                     image
-                    ? <Image width={0} height={0} sizes='100vw' className={"w-auto h-auto"} src={image} alt={name}/>
+                    ? <Image width={0} height={0} sizes='100vw' className={"w-full h-auto"} src={image} alt={name}/>
                     : <></>
                 }   
             </div>
             <div className={"items-center flex gap-1 justify-between text-right text-sm"}>
                 <GitHubIconLink gitHubLink={gitHubLink}/>
-                <p className={"text-xs w-fit"}>{description}</p>
+                <p className={"text-xs w-fit lg:text-base"}>{description}</p>
             </div>
         </Link>
     )

@@ -7,7 +7,7 @@ const ProjectCardBackSide = ({technologies} : {technologies: Technology[]}) => {
 
   return (
     <div className={"relative p-6"}>
-      <TechnologyLogoList technologies={technologies} tailwindColumns={'grid-cols-4'}/>
+      <TechnologyLogoList technologies={technologies} tailwindColumns={"grid-cols-4"} tailwindColumnsLarge={"lg:grid-cols-5"}/>
     </div>
   )
 }

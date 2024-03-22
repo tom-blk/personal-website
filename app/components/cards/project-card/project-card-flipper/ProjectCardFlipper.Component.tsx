@@ -25,8 +25,8 @@ const ProjectCardFlipper = (project: Project) => {
 
     return (
         <CardWrapper>
-            <div onMouseLeave={handleOnMouseOut} className={"relative w-60 h-44"}>
-                <div className={`relative w-full project-card-flipper-${animtaionSide}`}>
+            <div onMouseLeave={handleOnMouseOut} className={"relative w-60 h-44 lg:w-80 lg:h-60"}>
+                <div className={`relative w-full h-full project-card-flipper-${animtaionSide}`}>
                     <div className={'project-card-front'}>
                         <ProjectCardFrontSide handleHover={handleOnMouseOver} project={project}/>
                     </div>
