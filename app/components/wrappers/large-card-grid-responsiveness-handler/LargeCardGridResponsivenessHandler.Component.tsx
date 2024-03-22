@@ -17,7 +17,7 @@ const LargeCardGridResponsivenessHandler = (props: Props) => {
       }
 
   return (
-    <div className={`grid gap-3 md:${returnAppropriateColumns(2)} lg:${returnAppropriateColumns(3)}`}>
+    <div className={`grid gap-3 md:gap-4 lg:gap-6 md:${returnAppropriateColumns(2)} lg:${returnAppropriateColumns(3)}`}>
         {children}
     </div>
   )
