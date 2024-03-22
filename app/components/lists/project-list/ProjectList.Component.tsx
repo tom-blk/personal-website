@@ -8,19 +8,19 @@ const ProjectList= () => {
 
     const projects = allProjects
 
-  return (
-    <ListWrapper listName='Projects'>
-        <LargeCardGridResponsivenessHandler amountOfCards={allProjects.length}>
-        {
-            projects.map((project, index) => {
-                return (
-                    <ProjectCardFlipper key={index} {...project}/>
-                )
-            })
-        }
-        </LargeCardGridResponsivenessHandler>
-    </ListWrapper>
-  )
+    return (
+        <ListWrapper listName='Projects'>
+            <LargeCardGridResponsivenessHandler amountOfCards={allProjects.length}>
+            {
+                projects.map((project, index) => {
+                    return (
+                        <ProjectCardFlipper key={index} {...project}/>
+                    )
+                })
+            }
+            </LargeCardGridResponsivenessHandler>
+        </ListWrapper>
+    )
 }
 
 export default ProjectList
