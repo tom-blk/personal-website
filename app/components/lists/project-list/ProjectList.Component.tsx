@@ -2,6 +2,7 @@ import React from 'react'
 import ProjectCardFlipper from '../../cards/project-card/project-card-flipper/ProjectCardFlipper.Component'
 import { allProjects } from '@/app/data/projects'
 import ListWrapper from '../../wrappers/list-wrapper/ListWrapper.Component'
+import LargeCardGridResponsivenessHandler from '../../wrappers/large-card-grid-responsiveness-handler/LargeCardGridResponsivenessHandler.Component'
 
 const ProjectList= () => {
 
@@ -9,7 +10,7 @@ const ProjectList= () => {
 
   return (
     <ListWrapper listName='Projects'>
-        <div className={"grid gap-3 md:grid-cols-2 lg:grid-cols-3"}>
+        <LargeCardGridResponsivenessHandler amountOfCards={allProjects.length}>
         {
             projects.map((project, index) => {
                 return (
@@ -17,7 +18,7 @@ const ProjectList= () => {
                 )
             })
         }
-        </div>
+        </LargeCardGridResponsivenessHandler>
     </ListWrapper>
   )
 }

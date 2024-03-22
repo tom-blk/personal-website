@@ -3,11 +3,13 @@ import PositionCard from '../../cards/position-card/PositionCard.Component'
 import ListWrapper from '../../wrappers/list-wrapper/ListWrapper.Component'
 
 import { allPositions } from '@/app/data/positions'
+import LargeCardGridResponsivenessHandler from '../../wrappers/large-card-grid-responsiveness-handler/LargeCardGridResponsivenessHandler.Component'
 
 const PositionsList = () => {
+
   return (
     <ListWrapper listName='Positions'>
-      <div className={"grid gap-3 md:grid-cols-2 lg:grid-cols-3"}>
+      <LargeCardGridResponsivenessHandler amountOfCards={allPositions.length}>
       {
         allPositions.map((position, index) => {
             return (
@@ -15,7 +17,7 @@ const PositionsList = () => {
             )
         })
       }
-      </div>
+      </LargeCardGridResponsivenessHandler>
     </ListWrapper>
   )
 }
