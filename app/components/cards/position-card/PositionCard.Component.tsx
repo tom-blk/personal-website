@@ -16,7 +16,7 @@ const PositionCard = ({position}: Props) => {
 
 	return (
 		<Link href={linkedInUrl} target='_blank'>
-			<CardWrapper className={"p-6 grid gap-3 w-80 lg:p-8 lg:w-96"}>
+			<CardWrapper className={"p-6 grid gap-3 w-72 lg:p-8 lg:w-96"}>
 				<div className={"h-20 flex gap-3 lg:h-24"}>
 					{
 						companyLogo

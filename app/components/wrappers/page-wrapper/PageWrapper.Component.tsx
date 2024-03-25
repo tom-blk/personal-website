@@ -7,7 +7,7 @@ interface Props {
 const PageWrapper = ({children} : Props) => {
 
     return (
-        <div className={"max-w-screen-lg bg-black bg-opacity-40"}>
+        <div className={"grid justify-center px-2"}>
             {children}
         </div>
     )
