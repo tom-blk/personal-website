@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 
 interface Props{
@@ -14,8 +15,8 @@ const TechnologyDetailsCard = (props: Props) => {
     <section className={"p-4 absolute -left-full z-30 bg-black bg-opacity-70 border border-slate-800 rounded-md"}>
       <div>Professional Experience: {professionalExperience}</div>
       <div>General Experience: {generalExperience}</div>
-      <div>Used in the following positions: {positions}</div>
-      <div>Used in the following projects: {projects}</div>
+      <div>Positions: {positions}</div>
+      <div>Projects: {projects}</div>
     </section>
   )
 }
