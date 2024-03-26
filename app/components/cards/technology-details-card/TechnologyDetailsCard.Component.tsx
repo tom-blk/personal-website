@@ -1,7 +1,6 @@
 'use client'
-import React from 'react'
 
-import "./TechnologyDetailsCard.Styles.css";
+import React from 'react'
 
 interface Props{
   professionalExperience: number,
