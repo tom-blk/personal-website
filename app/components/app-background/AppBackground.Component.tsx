@@ -1,5 +1,3 @@
-'use client'
-
 import React, { MutableRefObject, Suspense, useEffect } from 'react'
 
 import { Canvas, useLoader } from "@react-three/fiber";

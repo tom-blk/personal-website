@@ -4,6 +4,7 @@ import SpaceWrapper from "./components/wrappers/space-wrapper/SpaceWrapper.Compo
 import PageWrapper from "./components/wrappers/page-wrapper/PageWrapper.Component";
 
 import "./globals.css";
+import RocketButton from "./components/generic/rocket-button/RocketButton.Component";
 
 export const metadata: Metadata = {
   title: "Tom Bleek",
@@ -21,6 +22,7 @@ export default function RootLayout({
         <PageWrapper>
           {children}
         </PageWrapper>
+        <RocketButton/>
         <SpaceWrapper/>
       </body>
     </html>

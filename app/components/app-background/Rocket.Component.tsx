@@ -104,9 +104,10 @@ const Rocket = () => {
                 rocketMeshRef.current.up 
             );
         }else if(!isOnAutoPilot){
+            console.log(state.pointer.x, state.pointer.y);
             rotationMatrix.lookAt(
                 new THREE.Vector3(rocketBodyRefVector.x, rocketBodyRefVector.y, rocketBodyRefVector.z),
-                new THREE.Vector3(state.pointer.x, state.pointer.y, 0), 
+                new THREE.Vector3(state.pointer.x*5, state.pointer.y*5, 0), 
                 rocketMeshRef.current.up 
             );
         }

@@ -27,7 +27,7 @@ const Space = () => {
         box3.getCenter(center);
         meshRef.current.position.sub(center);  // center the model
         meshRef.current.position.y = 0;  // adjust model position
-      }, [scene]);
+    }, [scene]);
 
     camera.position.z = 5;
     camera.position.y = 0;
