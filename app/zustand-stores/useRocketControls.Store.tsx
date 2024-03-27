@@ -1,6 +1,11 @@
 import { create } from 'zustand'
 
-const useRocketControlsStore = create((set) => ({
-  autoPilot: true,
-  changeControls: () => set(() => ({})),
+interface RocketControlsStore {
+  controls: "autoPilot" | "mouse";
+  changeControls: (updatedControls: "autoPilot" | "mouse") => void;
+}
+
+export const useRocketControlsStore = create<RocketControlsStore>((set) => ({
+  controls: "autoPilot",
+  changeControls: (updatedControls) => set(() => ({controls: updatedControls})),
 }))
