@@ -6,16 +6,15 @@ import { Trail } from '@react-three/drei';
 import { GLTFLoader } from 'three/examples/jsm/Addons.js';
 import { degToRad } from 'three/src/math/MathUtils.js';
 import { RapierRigidBody, RigidBody } from '@react-three/rapier';
+import { useRocketControlsStore } from '@/app/zustand-stores/useRocketControls.Store';
 
 const MOVEMENT_SPEED = 0.1;
 const ROTATION_SPEED = 1;
 
-interface Props {
-    isAutopilotRef: MutableRefObject<boolean>
-}
-
-const Rocket = (autopilot: Props) => {
+const Rocket = () => {
     //Double line breaks because the code is long and complex. 
+
+    const { isOnAutoPilot } = useRocketControlsStore();
 
     const rocketModel = useLoader(GLTFLoader, "/3d/rocket/rocket.gltf")
     const rocketMeshRef = useRef<Mesh>(null!);
@@ -98,13 +97,13 @@ const Rocket = (autopilot: Props) => {
     const updateRotationMatrix = (state: RootState) => {
     // The mesh itself doesn't move, but the body does, so we need to create a vector from the body's position
         const rocketBodyRefVector = rocketBodyRef.current.translation();
-        if(autopilot.isAutopilotRef.current){
+        if(isOnAutoPilot){
             rotationMatrix.lookAt(
                 new THREE.Vector3(rocketBodyRefVector.x, rocketBodyRefVector.y, rocketBodyRefVector.z),
                 targetRef.current.position, 
                 rocketMeshRef.current.up 
             );
-        }else if(!autopilot.isAutopilotRef.current){
+        }else if(!isOnAutoPilot){
             rotationMatrix.lookAt(
                 new THREE.Vector3(rocketBodyRefVector.x, rocketBodyRefVector.y, rocketBodyRefVector.z),
                 new THREE.Vector3(state.pointer.x, state.pointer.y, 0), 

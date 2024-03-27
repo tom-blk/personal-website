@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={"grid py-6 justify-center"}>
+      <body className={"grid justify-center"}>
         <PageWrapper>
           {children}
         </PageWrapper>

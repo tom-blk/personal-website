@@ -1,11 +1,11 @@
 import { create } from 'zustand'
 
 interface RocketControlsStore {
-  controls: "autoPilot" | "mouse";
-  changeControls: (updatedControls: "autoPilot" | "mouse") => void;
+  isOnAutoPilot: boolean;
+  changeControls: (updatedControls: boolean) => void;
 }
 
 export const useRocketControlsStore = create<RocketControlsStore>((set) => ({
-  controls: "autoPilot",
-  changeControls: (updatedControls) => set(() => ({controls: updatedControls})),
+  isOnAutoPilot: true,
+  changeControls: (updatedControls) => set(() => ({isOnAutoPilot: updatedControls})),
 }))

@@ -1,3 +1,5 @@
+'use client'
+
 import React, { MutableRefObject, Suspense, useEffect } from 'react'
 
 import { Canvas, useLoader } from "@react-three/fiber";
@@ -12,11 +14,7 @@ import FadeIn from './FadeIn.Component';
 
 import './AppBackground.Styles.css'
 
-interface Props {
-    isAutopilotRef: MutableRefObject<boolean>
-}
-
-const AppBackground = (autopilot: Props) => {
+const AppBackground = () => {
 
     useEffect(() => {
         const setWindowHeightVariable = () => {
@@ -39,7 +37,7 @@ const AppBackground = (autopilot: Props) => {
                 <Space/>
                 <Physics gravity={[0,0,0]}>
                     <Planet/>
-                    <Rocket isAutopilotRef={autopilot.isAutopilotRef} />
+                    <Rocket/>
                 </Physics>
                 </Canvas>
             </Suspense>
