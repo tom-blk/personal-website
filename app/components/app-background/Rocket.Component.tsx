@@ -8,9 +8,6 @@ import { degToRad } from 'three/src/math/MathUtils.js';
 import { RapierRigidBody, RigidBody } from '@react-three/rapier';
 import { useRocketControlsStore } from '@/app/zustand-stores/useRocketControls.Store';
 
-const MOVEMENT_SPEED = 0.1;
-const ROTATION_SPEED = 1;
-
 const Rocket = () => {
     //Double line breaks because the code is long and complex. 
 
@@ -21,12 +18,16 @@ const Rocket = () => {
     const rocketBodyRef = useRef<RapierRigidBody>(null!)
     const targetRef = useRef<Mesh>(null!);
 
-
-    
     const spherical = new THREE.Spherical();
     const rotationMatrix = new THREE.Matrix4();
     const targetQuaternion = new THREE.Quaternion();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+    const movementSpeed = isOnAutoPilot ? 0.1 : 5;
+    const rotationSpeed = isOnAutoPilot ? 1 : 1.5;
+    const regularDamping = isOnAutoPilot ? 15 : 30;
+    const proximityDamping = isOnAutoPilot ? 50 : 100;
+    const maximumVelocity = isOnAutoPilot ? 10 : 40;
 
 
     const rocketIsUnderMaxVel = (rocket: MutableRefObject<RapierRigidBody>, max: number) => {
@@ -48,9 +49,9 @@ const Rocket = () => {
         rocketMeshRef.current.getWorldDirection(rocketForwardDirection);
 
         const impulseDirection = {
-            x: -rocketForwardDirection.x * MOVEMENT_SPEED * delta,
-            y: -rocketForwardDirection.y * MOVEMENT_SPEED * delta,
-            z: -rocketForwardDirection.z * MOVEMENT_SPEED * delta
+            x: -rocketForwardDirection.x * movementSpeed * delta,
+            y: -rocketForwardDirection.y * movementSpeed * delta,
+            z: -rocketForwardDirection.z * movementSpeed * delta
         };
 
         if(rocketBodyRef.current && rocketMeshRef.current){
@@ -63,21 +64,21 @@ const Rocket = () => {
     const animate = (delta: number, impulseDirection: {x: number, y: number, z: number}) => {
     // If the rocket is not at the target rotation, rotate it towards the target
         if(!rocketMeshRef.current.quaternion.equals(targetQuaternion)) {
-            const step = delta * ROTATION_SPEED
+            const step = delta * rotationSpeed
             rocketMeshRef.current.quaternion.rotateTowards(targetQuaternion, step);
-            rocketBodyRef.current.setAngularDamping(MOVEMENT_SPEED * 15);
-            rocketBodyRef.current.setLinearDamping(MOVEMENT_SPEED * 15);
+            rocketBodyRef.current.setAngularDamping(movementSpeed * regularDamping);
+            rocketBodyRef.current.setLinearDamping(movementSpeed * regularDamping);
         }
 
     // Stop the rocket from accelerating if it's at max velocity
-        if(rocketIsUnderMaxVel(rocketBodyRef, 10))
+        if(rocketIsUnderMaxVel(rocketBodyRef, maximumVelocity))
             rocketBodyRef.current.applyImpulse(impulseDirection, true);
     
     // Brake the rocket when it is near the target 
         const rocketBodyRefVector = rocketBodyRef.current.translation();
         if(new THREE.Vector3(rocketBodyRefVector.x, rocketBodyRefVector.y, rocketBodyRefVector.z).distanceTo(targetRef.current.position) < 0.5) {
-            rocketBodyRef.current.setLinearDamping(MOVEMENT_SPEED * 50);
-            rocketBodyRef.current.setAngularDamping(MOVEMENT_SPEED * 50);
+            rocketBodyRef.current.setLinearDamping(movementSpeed * proximityDamping);
+            rocketBodyRef.current.setAngularDamping(movementSpeed * proximityDamping);
         }
     }
 
@@ -107,7 +108,7 @@ const Rocket = () => {
             console.log(state.pointer.x, state.pointer.y);
             rotationMatrix.lookAt(
                 new THREE.Vector3(rocketBodyRefVector.x, rocketBodyRefVector.y, rocketBodyRefVector.z),
-                new THREE.Vector3(state.pointer.x*5, state.pointer.y*5, 0), 
+                new THREE.Vector3(state.pointer.x*7, state.pointer.y*7, 0), 
                 rocketMeshRef.current.up 
             );
         }
