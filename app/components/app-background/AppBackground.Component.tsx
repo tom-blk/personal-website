@@ -1,7 +1,6 @@
-import React, { MutableRefObject, Suspense, useEffect } from 'react'
+import React, { Suspense, useEffect } from 'react'
 
-import { Canvas, useLoader } from "@react-three/fiber";
-import { GLTFLoader } from 'three/examples/jsm/Addons.js';
+import { Canvas } from "@react-three/fiber";
 import { Physics } from '@react-three/rapier';
 
 import Space from "./Space.Component";
@@ -34,6 +33,7 @@ const AppBackground = () => {
                 <pointLight position={[0, 0, 0]} intensity={3} />
                 <Space/>
                 <Physics gravity={[0,0,0]}>
+                    <AsteroidStorm />
                     <Planet/>
                     <Rocket/>
                 </Physics>
