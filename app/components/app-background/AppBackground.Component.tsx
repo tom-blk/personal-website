@@ -29,6 +29,7 @@ const AppBackground = () => {
     return (
         <div className={"w-full custom-vh fixed"}>
             <Suspense fallback={null}>
+                <div></div>
                 <Canvas gl={{
                     antialias: true,
                 }} shadows>
