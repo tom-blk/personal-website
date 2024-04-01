@@ -1,23 +1,46 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { useRocketControlsStore } from '@/app/zustand-stores/useRocketControls.Store'
 
 const RocketButton = () => {
     
     const { isOnAutoPilot, changeControls } = useRocketControlsStore()
+    const [buttonIsVisible, setButtonIsVisbile] = useState<'initial' | true | false>('initial');
+
+    useEffect(() => {
+        console.log("buttonIsVisible", buttonIsVisible)
+    }, [buttonIsVisible])
 
     const handleControlChange = () => {
         changeControls(!isOnAutoPilot);
     }
+
+    const toggleRocketButton = () => {
+        if(buttonIsVisible === 'initial'){
+            setButtonIsVisbile(true);
+            return;
+        }
+        setButtonIsVisbile(!buttonIsVisible);
+    }
+
+    const returnConditionalClassOrAnimation = () => {
+        if(buttonIsVisible === 'initial'){
+            return "right-0"
+        }
+        if(buttonIsVisible){
+            return "animate-toggle-rocket-button";
+        }
+        return "animate-untoggle-rocket-button";
+    }
     
     return(
-        <div className={"fixed top-10 right-20 hover:cursor-pointer z-50 "}>
+        <div className={`fixed top-10 ${returnConditionalClassOrAnimation()} hover:cursor-pointer z-50 `}>
             <div className={"relative"}>
                 <button
                     onClick={handleControlChange}
-                    className={"absolute top-0 left-0 h-14 w-14 p-3 border border-red-900 rounded-md rounded-l-none"}
+                    className={"absolute top-0 h-14 w-14 p-3 border border-red-900 rounded-md rounded-l-none"}
                 >
                     <svg fill='#ffffff' version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" width={"100%"} height={"100%"} viewBox="0 0 512 512">
                         <g>
@@ -36,7 +59,10 @@ const RocketButton = () => {
                         </g>
                     </svg>
                 </button>
-                <div className={"absolute text-center grid place-items-center h-14 w-6 top-0 -left-6 border border-red-900 rounded-md rounded-r-none"}>
+                <div 
+                    className={"absolute text-center grid place-items-center h-14 w-6 top-0 -left-6 border border-red-900 rounded-md rounded-r-none"}
+                    onClick={toggleRocketButton}
+                >
                     <div className={"h-min"}>&#x25C1;</div>
                 </div>
             </div>
