@@ -14,7 +14,7 @@ export default function Home() {
       <TechnologiesList/>
       <ProjectList/>
       <PositionsList/>
-      <ArticlesList />
+      {/*<ArticlesList />*/}
       <Footer/>
     </div>
   );
