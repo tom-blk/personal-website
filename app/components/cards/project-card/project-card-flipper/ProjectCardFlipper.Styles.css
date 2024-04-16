@@ -16,6 +16,7 @@
 
 .project-card-front, .project-card-back{
     backface-visibility: hidden;
+    transform: rotateX(0deg);
     position: absolute;
     width: 100%;
     height: 100%;
