@@ -4,6 +4,7 @@ import SpaceWrapper from "./components/wrappers/space-wrapper/SpaceWrapper.Compo
 import PageWrapper from "./components/wrappers/page-wrapper/PageWrapper.Component";
 
 import "./globals.css";
+import RocketButton from "./components/generic/rocket-button/RocketButton.Component";
 
 export const metadata: Metadata = {
   title: "Tom Bleek",
@@ -17,10 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={"grid py-6 justify-center"}>
+      <body className={"grid justify-center"}>
         <PageWrapper>
           {children}
         </PageWrapper>
+        <RocketButton/>
         <SpaceWrapper/>
       </body>
     </html>

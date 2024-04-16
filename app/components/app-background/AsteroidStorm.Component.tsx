@@ -1,13 +1,15 @@
 import React from 'react'
+
+import { GLTFLoader } from 'three/examples/jsm/Addons.js';
+import { useLoader } from '@react-three/fiber';
+
 import Asteroid from './Asteroid.Component'
-import { Group, Object3DEventMap } from 'three';
 
-interface AsteroidStormProps{
-    model: Group<Object3DEventMap>;
-}
+const AsteroidStorm = () => {
 
-const AsteroidStorm = (props: AsteroidStormProps) => {
-    const {model} = props;
+    const url = "/3d/meteroite/scene.gltf";
+
+    const {scene: model} = useLoader(GLTFLoader, url);
 
     return (
         <>

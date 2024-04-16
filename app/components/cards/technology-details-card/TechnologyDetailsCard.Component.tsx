@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 
 interface Props{
@@ -7,16 +9,21 @@ interface Props{
   projects: string,
 }
 
+const generalClasses = "p-4 z-30 bg-black bg-opacity-90 border border-slate-800 rounded-md text-sm "
+const mobileClasses = "animate-fade-in-out fixed inset-x-0 mx-auto bottom-5 text-xs text-left w-max "
+const desktopClasses = "lg:text-sm"
+
+
 const TechnologyDetailsCard = (props: Props) => {
   const {professionalExperience, generalExperience, positions, projects} = props;
 
   return (
-    <section className={"p-4 absolute -left-full z-30 bg-black bg-opacity-70 border border-slate-800 rounded-md"}>
+    <article className={generalClasses + mobileClasses + desktopClasses}>
       <div>Professional Experience: {professionalExperience}</div>
       <div>General Experience: {generalExperience}</div>
-      <div>Used in the following positions: {positions}</div>
-      <div>Used in the following projects: {projects}</div>
-    </section>
+      <div>Positions: {positions}</div>
+      <div>Projects: {projects}</div>
+    </article>
   )
 }
 

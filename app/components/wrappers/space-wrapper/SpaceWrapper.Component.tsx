@@ -1,25 +1,18 @@
 'use client'
-import React, { useEffect, useRef } from 'react'
+
+import React from 'react'
+
+import { useRocketControlsStore } from '@/app/zustand-stores/useRocketControls.Store'
+
 import AppBackground from '../../app-background/AppBackground.Component'
 
-const SpaceWrapper = () => {
+const SpaceWrapper = () => {    
 
-    const isAutopilotRef = useRef(true);
-
-    const handleControlChange = () => {
-        isAutopilotRef.current = !isAutopilotRef.current;
-        console.log("click")
-    }
+    const { isOnAutoPilot } = useRocketControlsStore();
 
     return (
-        <div className={"w-full h-full fixed -z-10"}>
-            <button
-                onClick={handleControlChange}
-                className={"absolute top-8 right-8 border border-red-900 z-10 rounded-md p-3"}
-            >
-                Take Control
-            </button>
-            <AppBackground isAutopilotRef={isAutopilotRef}/>
+        <div className={`w-full h-full fixed ${isOnAutoPilot ? "-z-10" : "z-40"}`}>
+            <AppBackground/>
         </div>
     )
 }

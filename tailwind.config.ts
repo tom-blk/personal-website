@@ -8,6 +8,23 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        fade: {
+          "0%": { opacity: "0" },
+          "10%": { opacity: "1" },
+          "90%": { opacity: "1" },
+          "100%": { opacity: "0" },
+        },
+        toggleRocketButton: {
+          "0%": { right: "0rem" },
+          "100%": { right: "5rem" },
+        }
+      },
+      animation:{
+        "fade-in-out": "fade 6s linear forwards",
+        "toggle-rocket-button": "toggleRocketButton .2s linear forwards",
+        "untoggle-rocket-button": "toggleRocketButton .2s linear reverse forwards",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

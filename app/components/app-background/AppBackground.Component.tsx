@@ -1,8 +1,9 @@
-import React, { MutableRefObject, Suspense, useEffect } from 'react'
+import React, { Suspense, useEffect } from 'react'
 
-import { Canvas, useLoader } from "@react-three/fiber";
-import { GLTFLoader } from 'three/examples/jsm/Addons.js';
+import { Canvas } from "@react-three/fiber";
 import { Physics } from '@react-three/rapier';
+
+import { useRocketControlsStore } from '@/app/zustand-stores/useRocketControls.Store';
 
 import Space from "./Space.Component";
 import Planet from './Planet.Component';
@@ -12,11 +13,9 @@ import FadeIn from './FadeIn.Component';
 
 import './AppBackground.Styles.css'
 
-interface Props {
-    isAutopilotRef: MutableRefObject<boolean>
-}
+const AppBackground = () => {
 
-const AppBackground = (autopilot: Props) => {
+    const { isOnAutoPilot } = useRocketControlsStore();
 
     useEffect(() => {
         const setWindowHeightVariable = () => {
@@ -30,6 +29,7 @@ const AppBackground = (autopilot: Props) => {
     return (
         <div className={"w-full custom-vh fixed"}>
             <Suspense fallback={null}>
+                <div></div>
                 <Canvas gl={{
                     antialias: true,
                 }} shadows>
@@ -38,8 +38,13 @@ const AppBackground = (autopilot: Props) => {
                 <pointLight position={[0, 0, 0]} intensity={3} />
                 <Space/>
                 <Physics gravity={[0,0,0]}>
+                    {
+                        isOnAutoPilot 
+                        ? <></>
+                        : <AsteroidStorm />
+                    }
                     <Planet/>
-                    <Rocket isAutopilotRef={autopilot.isAutopilotRef} />
+                    <Rocket/>
                 </Physics>
                 </Canvas>
             </Suspense>
