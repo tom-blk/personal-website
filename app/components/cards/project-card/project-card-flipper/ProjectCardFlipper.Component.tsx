@@ -8,20 +8,10 @@ import ProjectCardBackSide from '../project-card-sides/ProjectCardBackSide.Compo
 import { Project } from '@/app/types/AppTypes';
 
 import './ProjectCardFlipper.Styles.css';
-import { getProjectTechnologies } from '@/app/api/fetch';
 
 const ProjectCardFlipper = (project: Project) => {
 
     const [animtaionSide, setAnimationSide] = useState<"front" | "back" | "">("");
-    const [projectTechnologies, setProjectTechnologies] = useState([]);
-
-    useEffect(() => {
-        //Loading of technologies won't be visible to user since the icons are being displayed on the backside of the card unless the user flips it manually
-        getProjectTechnologies(project.id)
-            .then((data) => {
-                setProjectTechnologies(data);
-            })
-    }, [])
 
     const handleOnMouseOver = () => {
         setAnimationSide("front");
@@ -33,6 +23,8 @@ const ProjectCardFlipper = (project: Project) => {
         }, 100)
     }
 
+    console.log(project)
+
     return (
         <CardWrapper>
             <div onMouseLeave={handleOnMouseOut} className={"relative w-60 h-44 lg:w-80 lg:h-60"}>
@@ -41,7 +33,11 @@ const ProjectCardFlipper = (project: Project) => {
                         <ProjectCardFrontSide handleHover={handleOnMouseOver} project={project}/>
                     </div>
                     <div className={'project-card-back'}>
-                        <ProjectCardBackSide technologies={projectTechnologies}/>
+                        {
+                            project && project.technologies && project.technologies.length > 0
+                            ?<ProjectCardBackSide technologies={project.technologies}/>
+                            :<></>
+                        }
                     </div> 
                 </div>
             </div>

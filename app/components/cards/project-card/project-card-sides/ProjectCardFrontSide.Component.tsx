@@ -14,7 +14,7 @@ interface Props {
 
 const ProjectCardFrontSide = (props: Props) => {
 
-    const { name, image, gitHubLink, buildLink, description, isDemo } = props.project;
+    const { name, image, githublink, buildlink, description, isdemo } = props.project;
     const { handleHover } = props;
 
 
@@ -22,12 +22,12 @@ const ProjectCardFrontSide = (props: Props) => {
         <Link
             className={"h-full p-6 flex flex-col justify-between lg:p-8"}
             target="_blank" 
-            href={buildLink ? buildLink : gitHubLink}
+            href={buildlink ? buildlink : githublink}
         >
             <h3 className={"text-sm lg:text-lg"}>{name}</h3>
             <OnHoverTrigger prompt='Stack' className={"text-xs absolute top-4 right-4 lg:top-6 lg:right-6 lg:text-sm"} onHoverFunction={handleHover}/>
             <div className={"grid grow items-center h-16 relative"}>
-                <div className={`${isDemo ? "block" : "hidden"} text-red-900 font-bold text-xs absolute right-0 top-0 lg:text-sm`}>Demo</div>
+                <div className={`${isdemo ? "block" : "hidden"} text-red-900 font-bold text-xs absolute right-0 top-0 lg:text-sm`}>Demo</div>
                 {
                     image
                     ? <Image width={0} height={0} sizes='100vw' className={"w-full h-auto"} src={image} alt={name}/>
@@ -35,7 +35,7 @@ const ProjectCardFrontSide = (props: Props) => {
                 }   
             </div>
             <div className={"items-center flex gap-1 justify-between text-right text-sm"}>
-                <GitHubIconLink gitHubLink={gitHubLink}/>
+                <GitHubIconLink gitHubLink={githublink}/>
                 <p className={"text-xs w-fit lg:text-base"}>{description}</p>
             </div>
         </Link>

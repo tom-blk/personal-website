@@ -2,22 +2,24 @@ export interface Project{
     id: number;
     name: string;
     image: string;
-    gitHubLink: string;
-    buildLink?: string;
+    githublink: string;
+    buildlink?: string;
     description: string;
-    technologies: Technology[];
-    isDemo: boolean;
+    technologies?: Technology[];
+    isdemo: boolean;
 }
 
 export interface Technology{
-    name: string,
-    imageUrl: string,
-    technologyUrl: string,
-    isAreaOfFocus: boolean,
-    startedLearningDate: Date
+    id: number;
+    name: string;
+    image: string;
+    technologyurl: string;
+    isareaoffocus: boolean;
+    startedlearningdate: Date;
 }
 
 export interface Position{
+    id: number;
     name: string;
     company: string;
     companyLogo: string;
@@ -30,6 +32,7 @@ export interface Position{
 }
 
 export interface Article{
+    id: number;
     title: string;
     description: string;
     articleUrl: string;

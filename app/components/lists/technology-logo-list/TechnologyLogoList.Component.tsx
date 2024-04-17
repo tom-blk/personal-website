@@ -21,8 +21,8 @@ const TechnologyLogoList = (props : Props) => {
         <div className={`w-full h-full z-20 grid ${tailwindColumns} ${tailwindColumnsLarge} gap-3`}>
                 {
                 technologies.map((technology, index) => (
-                    <article className={"hover:cursor-pointer"} key={index} onClick={() => navigateToTechnologyUrl(technology.technologyUrl)}>
-                        <Image width={0} height={0} sizes='100vw' className={"w-full h-auto"} src={technology.imageUrl} alt={technology.name}/>
+                    <article className={"hover:cursor-pointer"} key={index} onClick={() => navigateToTechnologyUrl(technology.technologyurl)}>
+                        <Image width={0} height={0} sizes='100vw' className={"w-full h-auto"} src={technology.image} alt={technology.name}/>
                     </article>
                 ))
                 }
