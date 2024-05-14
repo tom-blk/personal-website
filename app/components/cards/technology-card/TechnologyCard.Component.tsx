@@ -7,12 +7,12 @@ import TechnologyDetailsCard from '../technology-details-card/TechnologyDetailsC
 
 interface Props{
     name: string,
-    imageUrl: string,
+    image?: string,
     className?: string
 }
 
 const TechnologyCard = (props: Props) => {
-    const {name, imageUrl, className} = props
+    const {name, image, className} = props
 
     const [isHovered, setIsHovered] = useState(false);
 
@@ -23,7 +23,7 @@ const TechnologyCard = (props: Props) => {
     return (
         <div className={`${className}`} onMouseEnter={e => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
             <MiniCardWrapper className={"relative grid place-items-center gap-2 hover:bg-opacity-10 py-2 px-3 lg:py-4 lg:px-6 text-sm md:text-base"}>
-                <img src={imageUrl} alt={name} className={"w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8"}/>
+                <img src={image} alt={name} className={"w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8"}/>
                 <div className={"grid place-items-center"}>{name}</div>
             </MiniCardWrapper>
             {

@@ -3,24 +3,26 @@ import { css, express, html, mysql, next, node, react, tailwind, typescript } fr
 
 export const allProjects: Project[]  = [
     {
+        id: 1,
         name: "Prometheus", 
         image: "/images/projects/prometheus.png", 
-        gitHubLink: "https://github.com/tom-blk/reciprocal-services-webapp", 
-        buildLink: "https://frontend.prometheus-backend.top/", 
+        githublink: "https://github.com/tom-blk/reciprocal-services-webapp", 
+        buildlink: "https://frontend.prometheus-backend.top/", 
         description: "Trading platform for local communities", 
         technologies: [
             react, typescript, html, css, mysql, node, express,
-            {name: "JWT", imageUrl:"/svg/jwt.svg", technologyUrl: "https://jwt.io/", isAreaOfFocus: false, startedLearningDate: new Date(2021, 9, 1)},
+            {id: 1, name: "JWT", image:"/svg/jwt.svg", technologyurl: "https://jwt.io/", isareaoffocus: false, startedlearningdate: new Date(2021, 9, 1)},
         ],
-        isDemo: true
+        isdemo: true
     },
     {
+        id: 2,
         name: "This Website", 
         image: "", 
-        gitHubLink: "https://github.com/tom-blk/personal-website", 
-        buildLink: undefined, 
+        githublink: "https://github.com/tom-blk/personal-website", 
+        buildlink: undefined, 
         description: "Personal Website", 
         technologies: [next, react, typescript, tailwind, html, css],
-        isDemo: false
+        isdemo: false
     }
 ]
