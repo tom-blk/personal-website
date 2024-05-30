@@ -3,10 +3,11 @@
 import React from 'react'
 
 interface Props{
-  professionalExperience: number,
-  generalExperience: number,
-  positions: string,
-  projects: string,
+    professionalExperience: number,
+    generalExperience: number,
+    positions: string[],
+    projects: string[],
+    confidence: "I know what I am doing" | "I can get by"
 }
 
 const generalClasses = "p-4 z-30 bg-black bg-opacity-90 border border-slate-800 rounded-md text-sm "
@@ -15,16 +16,51 @@ const desktopClasses = "lg:text-sm"
 
 
 const TechnologyDetailsCard = (props: Props) => {
-  const {professionalExperience, generalExperience, positions, projects} = props;
+    const {professionalExperience, generalExperience, positions, projects, confidence} = props;
 
-  return (
-    <article className={generalClasses + mobileClasses + desktopClasses}>
-      <div>Professional Experience: {professionalExperience}</div>
-      <div>General Experience: {generalExperience}</div>
-      <div>Positions: {positions}</div>
-      <div>Projects: {projects}</div>
-    </article>
-  )
+    const returnClassName = confidence === "I know what I am doing" ? "text-green-400" : "text-yellow-400";
+
+    return (
+        <article className={generalClasses + mobileClasses + desktopClasses}>
+            {
+                professionalExperience > 0
+                ?
+                <div className={'font-bold'}>Years of Professional Experience: <span className={'font-normal'}>{professionalExperience}</span></div>
+                :
+                <></>
+            }
+            <div className={'font-bold'}>Years of General Experience: <span className={'font-normal'}>{generalExperience > 0 ? generalExperience : '< 1'}</span></div>
+            {
+                positions.length > 0 
+                    ?
+                    <div>
+                        <div className='font-bold'>Positions:</div>
+                        {
+                            positions.map((position, index) => {
+                                return <div key={index}>{position}</div>
+                            })
+                        }
+                    </div> 
+                    : 
+                    <></>
+            }
+            {
+                projects.length > 0 
+                    ? 
+                    <div>
+                        <div className='font-bold'>Projects:</div> 
+                        {
+                            projects.map((project, index) => {
+                                return <div key={index}>{project}</div>
+                            })
+                        }
+                    </div> 
+                    : 
+                    <></>
+            }
+            <div className={'font-bold'}>Confidence: <span className={`${returnClassName} font-normal`}>{props.confidence}</span></div>
+        </article>
+    )
 }
 
 export default TechnologyDetailsCard

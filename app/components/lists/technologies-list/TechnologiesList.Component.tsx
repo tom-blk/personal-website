@@ -30,9 +30,7 @@ const TechnologiesList = () => {
                     return (
                       <TechnologyCard 
                         key={index}
-                        className={`${technology.isareaoffocus ? "text-gray-300" : "text-gray-500"}`} 
-                        name={technology.name}
-                        image={technology.image}
+                        technology={technology}
                       />
                     )
                   })

@@ -4,15 +4,11 @@ import React, { useEffect, useState } from 'react'
 
 import MiniCardWrapper from '../../generic/mini-card-wrapper/MiniCardWrapper.Component'
 import TechnologyDetailsCard from '../technology-details-card/TechnologyDetailsCard.Component'
+import { Technology } from '@/app/types/AppTypes'
 
-interface Props{
-    name: string,
-    image?: string,
-    className?: string
-}
-
-const TechnologyCard = (props: Props) => {
-    const {name, image, className} = props
+const TechnologyCard = (props: {technology: Technology}) => {
+    const {name, image, startedlearningdate, experience} = props.technology;
+    const {professionalexperience, positions, projects, confidence} = experience;
 
     const [isHovered, setIsHovered] = useState(false);
 
@@ -20,8 +16,12 @@ const TechnologyCard = (props: Props) => {
         console.log(isHovered)
     }, [isHovered])
 
+    const getGeneralExperience = () => {
+        return new Date().getFullYear() - startedlearningdate.getFullYear();
+    }
+
     return (
-        <div className={`${className}`} onMouseEnter={e => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+        <div onMouseEnter={e => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
             <MiniCardWrapper className={"relative grid place-items-center gap-2 hover:bg-opacity-10 py-2 px-3 lg:py-4 lg:px-6 text-sm md:text-base"}>
                 <img src={image} alt={name} className={"w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8"}/>
                 <div className={"grid place-items-center"}>{name}</div>
@@ -29,7 +29,7 @@ const TechnologyCard = (props: Props) => {
             {
             isHovered
             ?
-            <TechnologyDetailsCard professionalExperience={1} positions='Front End Developer @PowMio' projects='Prometheus' generalExperience={3}/>
+            <TechnologyDetailsCard professionalExperience={professionalexperience} positions={positions} projects={projects} confidence={confidence} generalExperience={getGeneralExperience()}/>
             :
             <></>
         }

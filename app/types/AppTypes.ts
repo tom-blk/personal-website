@@ -16,6 +16,14 @@ export interface Technology{
     technologyurl: string;
     isareaoffocus: boolean;
     startedlearningdate: Date;
+    experience: Experience;
+}
+
+export interface Experience{
+    professionalexperience: number;
+    positions: string[];
+    projects: string[];
+    confidence: "I know what I am doing" | "I can get by";
 }
 
 export interface Position{

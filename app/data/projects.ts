@@ -11,7 +11,9 @@ export const allProjects: Project[]  = [
         description: "Trading platform for local communities", 
         technologies: [
             react, typescript, html, css, mysql, node, express,
-            {id: 1, name: "JWT", image:"/svg/jwt.svg", technologyurl: "https://jwt.io/", isareaoffocus: false, startedlearningdate: new Date(2021, 9, 1)},
+            {id: 1, name: "JWT", image:"/svg/jwt.svg", technologyurl: "https://jwt.io/", isareaoffocus: false, startedlearningdate: new Date(2021, 9, 1), 
+                experience: {professionalexperience: 0, positions: [], projects: ["Prometheus"], confidence: "I can get by"}
+            },
         ],
         isdemo: true
     },

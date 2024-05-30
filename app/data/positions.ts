@@ -3,6 +3,7 @@ import { react, typescript, html, css, rest, git, docker } from "./technologies"
 
 export const allPositions: Position[] = [
     {
+        id: 1,
         name: 'Front End Developer',
         company: "PowMio GmbH",
         companyLogo: '/images/positions/powmio.jpeg',
