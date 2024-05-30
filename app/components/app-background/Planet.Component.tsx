@@ -9,7 +9,7 @@ const Planet = () => {
     const ref = useRef<Mesh>(null!)
     const bodyRef = useRef<RapierRigidBody>(null!)
 
-    const url = "/3d/planets/aerial_rocks_02.gltf";
+    const url = "/3d/earth/scene.gltf";
 
     const {scene: model} = useLoader(GLTFLoader, url);
 
@@ -22,11 +22,11 @@ const Planet = () => {
 
     return (
         <RigidBody ref={bodyRef} restitution={1}>
-            <mesh ref={ref} position={[40, 0, -50]} scale={[0.5, 0.5, 0.5]} castShadow receiveShadow>
+            <mesh ref={ref} position={[40, -10, -50]} scale={[20, 20, 20]} castShadow receiveShadow>
                 <primitive object={model} />
             </mesh>
         </RigidBody>
     )
-    }
+}
 
 export default Planet
